@@ -46,10 +46,7 @@ int main(int argc, char **argv)
 	Sem_init(&list_lock, 0, 1);
 	// init cache's head node
 	head = (struct cache_block*) malloc(sizeof(struct cache_block));
-	head->size = 0;
-	head->timestamp = clock();
-	head->next = NULL;
-	head->file = NULL;
+	init_cache(head);
 
 	// block sigpipe
 	Signal(SIGPIPE, SIG_IGN);
@@ -190,12 +187,9 @@ void doit(int fd)
 
 	// init a new cache block
 	struct cache_block* blk = (struct cache_block*) malloc(sizeof(struct cache_block));
-	Sem_init(&blk->lock, 0, 1);
-	blk->reading_cnt = 0;
+	init_cache(blk);
 	blk->size = content_len;
 	strncpy(blk->uri, uri, MAXLINE);
-	blk->timestamp = clock();
-	blk->next = NULL;
 	blk->file = (char*) malloc(sizeof(char) * content_len);
 
 	// read response contents and write to client

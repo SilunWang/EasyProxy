@@ -16,11 +16,12 @@ struct cache_block* search_cache(struct cache_block* head, char* uri) {
 }
 
 void init_cache(struct cache_block* blk) {
-    blk = (struct cache_block*) malloc(sizeof(struct cache_block));
     blk->size = 0;
     blk->timestamp = clock();
     blk->next = NULL;
     blk->file = NULL;
+    blk->reading_cnt = 0;
+    Sem_init(&(blk->lock), 0, 1);
     return;
 }
 
