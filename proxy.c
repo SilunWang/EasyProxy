@@ -28,7 +28,6 @@ int cache_size = 0;
 struct cache_block* head;
 
 void doit(int fd);
-void read_requesthdrs(rio_t *rp);
 int parse_uri(char *uri, char *hostname, char* port, char *filename);
 void serve_static(int fd, char *filename, int filesize);
 void get_filetype(char *filename, char *filetype);
@@ -123,6 +122,11 @@ void evict_cache(struct cache_block* head, int size) {
 	}
 }
 
+void sigsegv_handler(int sig) {
+	printf("segment fault\n");
+	return;
+}
+
 int main(int argc, char **argv)
 {
 	int listenfd;
@@ -143,8 +147,15 @@ int main(int argc, char **argv)
 	head->next = NULL;
 	head->file = NULL;
 
+	// block sigpipe
+	Signal(SIGPIPE, SIG_IGN);
+	// handle segment fault: it is sometimes weird
+	Signal(SIGSEGV, sigsegv_handler);
+
 	while (1) {
+
 		pthread_t tid;
+		// allocate space for a thread arg
 		thread_args* args_ptr = (thread_args*) malloc(sizeof(thread_args));
 		if (!args_ptr) {
 			printf("malloc failure\n");
@@ -152,10 +163,21 @@ int main(int argc, char **argv)
 		}
 		socklen_t clientlen = sizeof(struct sockaddr_storage);
 		printf("Preparing to connect with clients...\n");
-		args_ptr->fd = Accept(listenfd, (SA *)&args_ptr->socket_addr, &clientlen);
-		Getnameinfo((SA *) &args_ptr->socket_addr, clientlen, hostname, MAXLINE, port, MAXLINE, 0);
+
+		args_ptr->fd = accept(listenfd, (SA *)&args_ptr->socket_addr, &clientlen);
+		if (args_ptr->fd < 0) {
+			printf("accept failure\n");
+			continue;
+		}
+		if (getnameinfo((SA *) &args_ptr->socket_addr, clientlen, hostname, MAXLINE, port, MAXLINE, 0) != 0) {
+			printf("getnameinfo failure\n");
+			continue;
+		}
 		printf("Accepted connection from (%s, %s)\n", hostname, port);
-		Pthread_create(&tid, NULL, thread, args_ptr);
+		if (pthread_create(&tid, NULL, thread, args_ptr) != 0) {
+			printf("pthread_create error\n");
+			continue;
+		}
 	}
 
 } 
@@ -293,23 +315,6 @@ void doit(int fd)
 }
 /* $end doit */
 
-/*
- * read_requesthdrs - read HTTP request headers
- */
-/* $begin read_requesthdrs */
-void read_requesthdrs(rio_t *rp)
-{
-	char buf[MAXLINE];
-
-	Rio_readlineb(rp, buf, MAXLINE);
-	printf("%s", buf);
-	while (strcmp(buf, "\r\n")) {
-		Rio_readlineb(rp, buf, MAXLINE);
-		printf("%s", buf);
-	}
-	return;
-}
-/* $end read_requesthdrs */
 
 /*
  * parse_uri - parse URI into filename, hostname and port
