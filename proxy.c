@@ -18,6 +18,7 @@ typedef struct {
 
 int cache_size = 0;
 struct cache_block* head;
+sem_t list_lock;
 
 void doit(int fd);
 int parse_uri(char *uri, char *hostname, char* port, char *filename);
@@ -42,12 +43,11 @@ int main(int argc, char **argv)
 	}
 
 	listenfd = Open_listenfd(argv[1]);
+	Sem_init(&list_lock, 0, 1);
 	// init cache's head node
 	head = (struct cache_block*) malloc(sizeof(struct cache_block));
 	head->size = 0;
 	head->timestamp = clock();
-	head->is_reading = 0;
-	head->is_writing = 0;
 	head->next = NULL;
 	head->file = NULL;
 
@@ -131,8 +131,10 @@ void doit(int fd)
 	ptr = search_cache(head, uri);
 	// cache found
 	if (ptr) {
+		add_reading_cnt(ptr);
 		// send cache to client
 		Rio_writen(fd, ptr->file, ptr->size);
+		sub_reading_cnt(ptr);
 		update_timestamp(head, ptr);
 		return;
 	}
@@ -188,11 +190,11 @@ void doit(int fd)
 
 	// init a new cache block
 	struct cache_block* blk = (struct cache_block*) malloc(sizeof(struct cache_block));
+	Sem_init(&blk->lock, 0, 1);
+	blk->reading_cnt = 0;
 	blk->size = content_len;
 	strncpy(blk->uri, uri, MAXLINE);
 	blk->timestamp = clock();
-	blk->is_reading = 0;
-	blk->is_writing = 0;
 	blk->next = NULL;
 	blk->file = (char*) malloc(sizeof(char) * content_len);
 
