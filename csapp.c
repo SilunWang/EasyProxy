@@ -7,7 +7,7 @@
  *
  *   - Added protocol-independent inet_ntop and inet_pton functions. The
  *     inet_ntoa and inet_aton functions are obsolete.
- *
+ *     
  * Updated 7/2014 droh:
  *   - Aded reentrant sio (signal-safe I/O) routines
  * 
