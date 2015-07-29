@@ -1,4 +1,5 @@
 #include "csapp.h"
+#include "cache.h"
 
 
 /* Recommended max cache and object sizes */
@@ -14,111 +15,15 @@ typedef struct {
 	int fd;	
 	struct sockaddr_storage socket_addr;
 } thread_args;
-	
-struct cache_block {
-	char uri[MAXLINE];
-	clock_t timestamp;
-	int semaphore;
-	int size;
-	char* file;
-	struct cache_block* next;
-};
 
 int cache_size = 0;
 struct cache_block* head;
 
 void doit(int fd);
 int parse_uri(char *uri, char *hostname, char* port, char *filename);
-void clienterror(int fd, char *cause, char *errnum,
-                 char *shortmsg, char *longmsg);
+void clienterror(int fd, char *cause, char *errnum, char *shortmsg, char *longmsg);
 void *thread (void *vargp);
-struct cache_block* search_cache(struct cache_block* head, char* uri);
-void update_timestamp(struct cache_block* head, struct cache_block* blk);
-void lock_cache(struct cache_block* blk);
-void unlock_cache(struct cache_block* blk);
-void add_cache(struct cache_block* head, struct cache_block* blk);
-void delete_cache(struct cache_block* head, struct cache_block* blk);
-void evict_cache(struct cache_block* head, int size);
-
-struct cache_block* search_cache(struct cache_block* head, char* uri) {
-	struct cache_block* ptr = head->next;
-	while (ptr) {
-		if (strcmp(ptr->uri, uri) == 0) {
-			return ptr;
-		}
-		else
-			ptr = ptr->next;
-	}
-	return NULL;
-}
-
-void update_timestamp(struct cache_block* head, struct cache_block* blk) {
-	if (blk) {
-		while (blk->semaphore == 0)
-			sleep(0);
-		lock_cache(blk);
-		delete_cache(head, blk);
-		blk->timestamp = clock();
-		add_cache(head, blk);
-		unlock_cache(blk);
-	}
-}
-
-void lock_cache(struct cache_block* blk) {
-	if (blk) {
-		blk->semaphore = 0;
-	}
-}
-
-void unlock_cache(struct cache_block* blk) {
-	if (blk) {
-		blk->semaphore = 1;
-	}
-}
-
-void add_cache(struct cache_block* head, struct cache_block* blk) {
-	blk->next = head->next;
-	head->next = blk;
-	cache_size += blk->size;
-	return;
-}
-
-void delete_cache(struct cache_block* head, struct cache_block* blk) {
-	struct cache_block* ptr = head->next;
-	struct cache_block* pre = head;
-	while (ptr) {
-		if (ptr == blk) {
-			pre->next = ptr->next;
-			cache_size -= blk->size;
-			return;
-		}
-		else {
-			ptr = ptr->next;
-			pre = pre->next;
-		}
-	}
-}
-
-void evict_cache(struct cache_block* head, int size) {
-	struct cache_block* ptr = head->next;
-	struct cache_block* pre = head;
-	while (ptr) {
-		lock_cache(ptr);
-		if (ptr->size < size) {
-			pre->next = ptr->next;
-			cache_size -= ptr->size;
-			unlock_cache(ptr);
-			Free(ptr);
-			evict_cache(head, size - ptr->size);
-		}
-		else {
-			pre->next = ptr->next;
-			cache_size -= ptr->size;
-			unlock_cache(ptr);
-			Free(ptr);
-		}
-	}
-}
+void sigsegv_handler(int sig);
 
 void sigsegv_handler(int sig) {
 	sio_error("segment fault\n");
@@ -207,8 +112,9 @@ void doit(int fd)
 	if (!Rio_readlineb(&rio, buf, MAXLINE))
 		return;
 	printf("%s", buf);
-	sscanf(buf, "%s %s %s", method, uri, version);     
-	// if not GET method  
+	sscanf(buf, "%s %s %s", method, uri, version);    
+
+	// if not GET method, ignore it
 	if (strcasecmp(method, "GET")) {                     
 		clienterror(fd, method, "501", "Not Implemented",
 		            "Tiny does not implement this method");
