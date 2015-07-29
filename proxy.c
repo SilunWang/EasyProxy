@@ -46,7 +46,8 @@ int main(int argc, char **argv)
 	head = (struct cache_block*) malloc(sizeof(struct cache_block));
 	head->size = 0;
 	head->timestamp = clock();
-	head->semaphore = 1;
+	head->is_reading = 0;
+	head->is_writing = 0;
 	head->next = NULL;
 	head->file = NULL;
 
@@ -128,15 +129,15 @@ void doit(int fd)
 
 	struct cache_block* ptr;
 	ptr = search_cache(head, uri);
-
+	// cache found
 	if (ptr) {
-		// send cache
+		// send cache to client
 		Rio_writen(fd, ptr->file, ptr->size);
 		update_timestamp(head, ptr);
 		return;
 	}
 
-	// connect with server
+	// cache not found, connect with server
 	clientfd = Open_clientfd(hostname, port);
 	Rio_readinitb(&rio_client, clientfd);
 	// send request line: GET HTTP/1.0
@@ -181,6 +182,7 @@ void doit(int fd)
 
 	int size = 0;
 	int cacheit = 0;
+	// shall we cache it?
 	if (content_len < MAX_OBJECT_SIZE)
 		cacheit = 1;
 
@@ -189,7 +191,8 @@ void doit(int fd)
 	blk->size = content_len;
 	strncpy(blk->uri, uri, MAXLINE);
 	blk->timestamp = clock();
-	blk->semaphore = 1;
+	blk->is_reading = 0;
+	blk->is_writing = 0;
 	blk->next = NULL;
 	blk->file = (char*) malloc(sizeof(char) * content_len);
 
@@ -207,8 +210,9 @@ void doit(int fd)
 		if (cacheit)
 			strncat(blk->file, buf, size);
 	}
-
+	// add cache block
 	if (cacheit) {
+		// size overflow, need to evict using LRU
 		if (blk->size + cache_size > MAX_CACHE_SIZE)
 			evict_cache(head, blk->size);
 		add_cache(head, blk);
