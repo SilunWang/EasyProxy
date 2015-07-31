@@ -3,6 +3,7 @@
 struct cache_block {
     char uri[MAXLINE];
     clock_t timestamp;
+    // this lock protects vars: reading_cnt, timestamp
     sem_t lock;
     int reading_cnt;
     int size;

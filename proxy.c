@@ -1,3 +1,8 @@
+/**
+ * Author: Silun Wang
+ * Andrew ID: silunw
+ * Date: 07-27-2015
+ */
 #include "csapp.h"
 #include "cache.h"
 
@@ -16,8 +21,13 @@ typedef struct {
 	struct sockaddr_storage socket_addr;
 } thread_args;
 
+/* total cache size */
 int cache_size = 0;
+/* the head of cache list */
 struct cache_block* head;
+/* the lock of cache list,
+   to add or delete a list node, 
+   you need to acquire this lock */
 sem_t list_lock;
 
 void doit(int fd);
@@ -25,11 +35,6 @@ int parse_uri(char *uri, char *hostname, char* port, char *filename);
 void clienterror(int fd, char *cause, char *errnum, char *shortmsg, char *longmsg);
 void *thread (void *vargp);
 void sigsegv_handler(int sig);
-
-void sigsegv_handler(int sig) {
-	sio_error("segment fault\n");
-	return;
-}
 
 int main(int argc, char **argv)
 {
@@ -50,8 +55,6 @@ int main(int argc, char **argv)
 
 	// block sigpipe
 	Signal(SIGPIPE, SIG_IGN);
-	// handle segment fault: it is sometimes weird
-	Signal(SIGSEGV, sigsegv_handler);
 
 	while (1) {
 
@@ -87,10 +90,21 @@ void *thread (void *vargp) {
 	thread_args args;
 	args = *((thread_args *) vargp);
 	Pthread_detach(pthread_self());
+	// handle segment fault: it is sometimes weird
+	Signal(SIGSEGV, sigsegv_handler);
 	doit(args.fd);
 	Close(args.fd);
 	Free(vargp);
 	return NULL;
+}
+
+/**
+ * segment fault signal handler
+ */
+void sigsegv_handler(int sig) {
+	sio_error("segment fault\n");
+	pthread_exit(NULL);
+	return;
 }
 
 /*
@@ -128,9 +142,11 @@ void doit(int fd)
 	ptr = search_cache(head, uri);
 	// cache found
 	if (ptr) {
+		// add the number of existing threads reading ptr
 		add_reading_cnt(ptr);
 		// send cache to client
 		Rio_writen(fd, ptr->file, ptr->size);
+		// subtract the number of existing threads reading ptr
 		sub_reading_cnt(ptr);
 		update_timestamp(head, ptr);
 		return;
@@ -195,14 +211,14 @@ void doit(int fd)
 	// read response contents and write to client
 	while (content_len > MAXLINE) {
 		size = Rio_readnb(&rio_client, buf, MAXLINE);
-		Rio_writen(fd, buf, size);
+		Rio_writen(fd, buf, MAXLINE);
 		if (cacheit)
 			strncat(blk->file, buf, size);
 		content_len -= MAXLINE;
 	}
 	// content is not null
 	while ((size = Rio_readnb(&rio_client, buf, MAXLINE)) > 0) {
-		Rio_writen(fd, buf, size);
+		Rio_writen(fd, buf, MAXLINE);
 		if (cacheit)
 			strncat(blk->file, buf, size);
 	}
@@ -245,7 +261,7 @@ int parse_uri(char *uri, char *hostname, char* port, char* filename)
 	if (p)
 		strcpy(port, p);
 	else
-		port = NULL;
+		strcpy(port, "80");
 	file_start = host_end;
 	strcpy(filename, file_start);
 	return 0;

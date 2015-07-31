@@ -3,6 +3,12 @@
 extern int cache_size;
 extern sem_t list_lock;
 
+/**
+ * search for a cache block whose uri is the same
+ * @param  head: list head
+ * @param  uri
+ * @return block ptr
+ */
 struct cache_block* search_cache(struct cache_block* head, char* uri) {
     struct cache_block* ptr = head->next;
     while (ptr) {
@@ -15,6 +21,10 @@ struct cache_block* search_cache(struct cache_block* head, char* uri) {
     return NULL;
 }
 
+/**
+ * init a block and its semaphore
+ * @param blk [description]
+ */
 void init_cache(struct cache_block* blk) {
     blk->size = 0;
     blk->timestamp = clock();
@@ -25,6 +35,7 @@ void init_cache(struct cache_block* blk) {
     return;
 }
 
+// notice: need to acquire the block's lock
 void add_reading_cnt(struct cache_block* blk) {
     if (blk) {
         P(&(blk->lock));
@@ -33,6 +44,7 @@ void add_reading_cnt(struct cache_block* blk) {
     }
 }
 
+// notice: need to acquire the block's lock
 void sub_reading_cnt(struct cache_block* blk) {
     if (blk) {
         P(&(blk->lock));
@@ -41,6 +53,10 @@ void sub_reading_cnt(struct cache_block* blk) {
     }
 }
 
+/**
+ * free a cache block to prevent memory leakage
+ * notice: need to acquire the block's lock
+ */
 void free_cache_node(struct cache_block* blk) {
     if (blk) {
         P(&(blk->lock));
@@ -51,6 +67,12 @@ void free_cache_node(struct cache_block* blk) {
     }
 }
 
+/**
+ * update a block's timestamp
+ * first delete it from list
+ * then add it to the end of list
+ * notice: need to acquire the block's lock
+ */
 void update_timestamp(struct cache_block* head, struct cache_block* blk) {
     if (blk) {
         clock_t ts = clock();
@@ -62,6 +84,11 @@ void update_timestamp(struct cache_block* head, struct cache_block* blk) {
     }
 }
 
+/**
+ * add a cache block into the end
+ * @param head: list head
+ * @param blk: the block to be added
+ */
 void add_cache(struct cache_block* head, struct cache_block* blk) {
     P(&list_lock);
     struct cache_block* pre = head;
@@ -77,6 +104,12 @@ void add_cache(struct cache_block* head, struct cache_block* blk) {
     return;
 }
 
+/**
+ * delete a block from the list
+ * but do not free it
+ * @param head: list head
+ * @param blk: the block to be deleted
+ */
 void delete_cache(struct cache_block* head, struct cache_block* blk) {
     P(&list_lock);
     struct cache_block* ptr = head->next;
@@ -96,6 +129,13 @@ void delete_cache(struct cache_block* head, struct cache_block* blk) {
     return;
 }
 
+/**
+ * evict a cache block using LRU from the front
+ * if size not enough
+ * evict another recursively
+ * @param head: list head
+ * @param size: least size of cache to be evicted
+ */
 void evict_cache(struct cache_block* head, int size) {
     P(&list_lock);
     struct cache_block* ptr = head->next;
@@ -105,17 +145,19 @@ void evict_cache(struct cache_block* head, int size) {
             pre->next = ptr->next;
             cache_size -= ptr->size;
             size -= ptr->size;
+            // ensure no thread is reading from ptr
             while (ptr->reading_cnt != 0)
                 sleep(0);
-            free_cache_node(ptr);
+            //free_cache_node(ptr);
             ptr = pre->next;
         }
         else {
             pre->next = ptr->next;
             cache_size -= ptr->size;
+            // ensure no thread is reading from ptr
             while (ptr->reading_cnt != 0)
                 sleep(0);
-            free_cache_node(ptr);
+            //free_cache_node(ptr);
         }
     }
     V(&list_lock);
