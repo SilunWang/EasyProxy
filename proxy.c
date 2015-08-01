@@ -164,7 +164,6 @@ void doit(int fd)
 
 	// read http headers from client and write to server
 	while (strncmp(buf, "\r\n", MAXLINE) != 0) {
-
 		if (strstr(buf, "User-Agent")) 
 			strncpy(buf, user_agent_hdr, MAXLINE);
 		else if (strstr(buf, "Accept")) 
@@ -175,6 +174,11 @@ void doit(int fd)
 			strncpy(buf, "Connection: close\r\n", MAXLINE);
 		else if (strstr(buf, "Proxy-Connection")) 
 			strncpy(buf, "Proxy-Connection: close\r\n", MAXLINE);
+		else if (strstr(buf, "Host")) {
+			// ignore, because we already sent one
+			Rio_readlineb(&rio, buf, MAXLINE);
+			continue;
+		}
 		Rio_writen(clientfd, buf, strlen(buf));
 		Rio_readlineb(&rio, buf, MAXLINE);
 	}
