@@ -218,7 +218,7 @@ void doit(int fd)
 	}
 	// content is not null
 	while ((size = Rio_readnb(&rio_client, buf, MAXLINE)) > 0) {
-		Rio_writen(fd, buf, MAXLINE);
+		Rio_writen(fd, buf, size);
 		if (cacheit && content_len)
 			strncat(blk->file, buf, size);
 	}
