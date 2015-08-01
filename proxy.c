@@ -209,17 +209,27 @@ void doit(int fd)
 	if (content_len > 0)
 		blk->file = (char*) malloc(sizeof(char) * content_len);
 	else
-		blk->file = (char*) malloc(100000);
-	
+		blk->file = (char*) malloc(1000000);
+
+	memset(buf, 0, MAXLINE);
+	int total_size = 0;
+	char* tmp = blk->file;
 	// read response contents and write to client
 	while ((size = Rio_readnb(&rio_client, buf, MAXLINE)) > 0) {
+		total_size += size;
+		printf("total_size %s: %d\n", uri, total_size);
+		if (cacheit) {
+			memcpy(tmp, buf, size);
+			tmp += size;
+		}
 		Rio_writen(fd, buf, size);
-		if (cacheit)
-			strncat(blk->file, buf, size);
+		memset(buf, 0, MAXLINE);
 	}
+
 	// add cache block
 	if (cacheit) {
-		blk->size = strlen(blk->file);
+		blk->size = total_size;
+		printf("blk size %s: %d\n", uri, blk->size);
 		// size overflow, need to evict using LRU
 		if (blk->size + cache_size > MAX_CACHE_SIZE)
 			evict_cache(head, blk->size);
