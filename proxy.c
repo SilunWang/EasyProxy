@@ -204,26 +204,22 @@ void doit(int fd)
 	// init a new cache block
 	struct cache_block* blk = (struct cache_block*) malloc(sizeof(struct cache_block));
 	init_cache(blk);
-	blk->size = content_len;
 	strncpy(blk->uri, uri, MAXLINE);
-	blk->file = (char*) malloc(sizeof(char) * content_len);
 
+	if (content_len > 0)
+		blk->file = (char*) malloc(sizeof(char) * content_len);
+	else
+		blk->file = (char*) malloc(100000);
+	
 	// read response contents and write to client
-	while (content_len > MAXLINE) {
-		size = Rio_readnb(&rio_client, buf, MAXLINE);
-		Rio_writen(fd, buf, MAXLINE);
-		if (cacheit)
-			strncat(blk->file, buf, size);
-		content_len -= MAXLINE;
-	}
-	// content is not null
 	while ((size = Rio_readnb(&rio_client, buf, MAXLINE)) > 0) {
 		Rio_writen(fd, buf, size);
-		if (cacheit && content_len)
+		if (cacheit)
 			strncat(blk->file, buf, size);
 	}
 	// add cache block
 	if (cacheit) {
+		blk->size = strlen(blk->file);
 		// size overflow, need to evict using LRU
 		if (blk->size + cache_size > MAX_CACHE_SIZE)
 			evict_cache(head, blk->size);

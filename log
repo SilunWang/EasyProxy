@@ -1,0 +1,749 @@
+Preparing to connect with clients...
+Accepted connection from (182.200.0.89, 21063)
+Preparing to connect with clients...
+GET http://www.cs.cmu.edu/~213/ HTTP/1.1
+cacheit: 1 and content_len: 0
+2blk size: 8192
+cacheit: 1 and content_len: 0
+2blk size: 10896
+3blk size: 10896
+Accepted connection from (182.200.0.89, 21066)
+Preparing to connect with clients...
+GET http://www.cs.cmu.edu/~213/course.css HTTP/1.1
+cacheit: 1 and content_len: 0
+2blk size: 1656
+3blk size: 1656
+Accepted connection from (182.200.0.89, 21068)
+Preparing to connect with clients...
+GET http://www.cs.cmu.edu/~213/img/tjo.jpg HTTP/1.1
+Accepted connection from (182.200.0.89, 21072)
+Preparing to connect with clients...
+cacheit: 1 and content_len: 0
+2blk size: 4
+3blk size: 4
+GET http://www.cs.cmu.edu/~213/img/dhruvens.jpg HTTP/1.1
+cacheit: 1 and content_len: 0
+2blk size: 4
+cacheit: 1 and content_len: 0
+2blk size: 6
+cacheit: 1 and content_len: 0
+2blk size: 265
+Accepted connection from (182.200.0.89, 21070)
+Preparing to connect with clients...
+GET http://www.cs.cmu.edu/~213/img/monilsha.jpg HTTP/1.1
+cacheit: 1 and content_len: 0
+2blk size: 4
+cacheit: 1 and content_len: 0
+2blk size: 592
+cacheit: 1 and content_len: 0
+2blk size: 602
+Accepted connection from (182.200.0.89, 21071)
+Preparing to connect with clients...
+GET http://www.cs.cmu.edu/~213/img/dipayan.jpg HTTP/1.1
+cacheit: 1 and content_len: 0
+2blk size: 4
+cacheit: 1 and content_len: 0
+2blk size: 49
+cacheit: 1 and content_len: 0
+2blk size: 52
+Accepted connection from (182.200.0.89, 21073)
+Preparing to connect with clients...
+GET http://www.cs.cmu.edu/~213/img/tkarutur.jpg HTTP/1.1
+cacheit: 1 and content_len: 0
+2blk size: 8
+cacheit: 1 and content_len: 0
+2blk size: 722
+cacheit: 1 and content_len: 0
+2blk size: 1156
+Accepted connection from (182.200.0.89, 21076)
+Preparing to connect with clients...
+GET http://www.cs.cmu.edu/~213/img/shenchex.jpg HTTP/1.1
+cacheit: 1 and content_len: 0
+2blk size: 10
+cacheit: 1 and content_len: 0
+2blk size: 298
+cacheit: 1 and content_len: 0
+2blk size: 553
+cacheit: 1 and content_len: 0
+2blk size: 830
+cacheit: 1 and content_len: 0
+2blk size: 155
+cacheit: 1 and content_len: 0
+2blk size: 505
+cacheit: 1 and content_len: 0
+2blk size: 2060
+cacheit: 1 and content_len: 0
+2blk size: 2105
+cacheit: 1 and content_len: 0
+2blk size: 912
+3blk size: 912
+cacheit: 1 and content_len: 0
+2blk size: 129
+cacheit: 1 and content_len: 0
+2blk size: 185
+cacheit: 1 and content_len: 0
+2blk size: 313
+cacheit: 1 and content_len: 0
+2blk size: 446
+cacheit: 1 and content_len: 0
+2blk size: 1414
+cacheit: 1 and content_len: 0
+2blk size: 2012
+cacheit: 1 and content_len: 0
+2blk size: 2478
+cacheit: 1 and content_len: 0
+2blk size: 2927
+Accepted connection from (182.200.0.89, 21075)
+Preparing to connect with clients...
+cacheit: 1 and content_len: 0
+2blk size: 540
+cacheit: 1 and content_len: 0
+2blk size: 546
+cacheit: 1 and content_len: 0
+2blk size: 548
+cacheit: 1 and content_len: 0
+2blk size: 2137
+cacheit: 1 and content_len: 0
+2blk size: 2159
+3blk size: 2159
+cacheit: 1 and content_len: 0
+2blk size: 788
+cacheit: 1 and content_len: 0
+2blk size: 790
+cacheit: 1 and content_len: 0
+2blk size: 528
+cacheit: 1 and content_len: 0
+2blk size: 631
+cacheit: 1 and content_len: 0
+2blk size: 3142
+cacheit: 1 and content_len: 0
+2blk size: 3493
+cacheit: 1 and content_len: 0
+2blk size: 3564
+cacheit: 1 and content_len: 0
+2blk size: 3707
+cacheit: 1 and content_len: 0
+2blk size: 3748
+cacheit: 1 and content_len: 0
+2blk size: 4046
+cacheit: 1 and content_len: 0
+2blk size: 4079
+cacheit: 1 and content_len: 0
+2blk size: 832
+cacheit: 1 and content_len: 0
+2blk size: 935
+cacheit: 1 and content_len: 0
+2blk size: 1214
+cacheit: 1 and content_len: 0
+2blk size: 1501
+cacheit: 1 and content_len: 0
+2blk size: 1677
+cacheit: 1 and content_len: 0
+2blk size: 1775
+cacheit: 1 and content_len: 0
+2blk size: 1801
+cacheit: 1 and content_len: 0
+2blk size: 1807
+3blk size: 631
+cacheit: 1 and content_len: 0
+2blk size: 4332
+cacheit: 1 and content_len: 0
+2blk size: 4954
+cacheit: 1 and content_len: 0
+2blk size: 5221
+cacheit: 1 and content_len: 0
+2blk size: 5747
+3blk size: 5747
+cacheit: 1 and content_len: 0
+2blk size: 1835
+cacheit: 1 and content_len: 0
+2blk size: 1907
+cacheit: 1 and content_len: 0
+2blk size: 1993
+cacheit: 1 and content_len: 0
+2blk size: 2069
+cacheit: 1 and content_len: 0
+2blk size: 2357
+cacheit: 1 and content_len: 0
+2blk size: 2477
+cacheit: 1 and content_len: 0
+2blk size: 2507
+cacheit: 1 and content_len: 0
+2blk size: 2639
+cacheit: 1 and content_len: 0
+2blk size: 2677
+cacheit: 1 and content_len: 0
+2blk size: 2679
+cacheit: 1 and content_len: 0
+2blk size: 2691
+cacheit: 1 and content_len: 0
+2blk size: 3043
+cacheit: 1 and content_len: 0
+2blk size: 3311
+cacheit: 1 and content_len: 0
+2blk size: 3422
+cacheit: 1 and content_len: 0
+2blk size: 3535
+cacheit: 1 and content_len: 0
+2blk size: 3711
+cacheit: 1 and content_len: 0
+2blk size: 3830
+cacheit: 1 and content_len: 0
+2blk size: 4108
+cacheit: 1 and content_len: 0
+2blk size: 4174
+cacheit: 1 and content_len: 0
+2blk size: 4349
+3blk size: 4349
+Accepted connection from (182.200.0.89, 21067)
+Preparing to connect with clients...
+Accepted connection from (182.200.0.89, 21077)
+Preparing to connect with clients...
+Accepted connection from (182.200.0.89, 21065)
+Preparing to connect with clients...
+GET http://www.cs.cmu.edu/~213/img/sdsouza.jpg HTTP/1.1
+cacheit: 1 and content_len: 0
+2blk size: 4
+cacheit: 1 and content_len: 0
+2blk size: 7
+cacheit: 1 and content_len: 0
+2blk size: 90
+Accepted connection from (182.200.0.89, 21069)
+Preparing to connect with clients...
+Accepted connection from (182.200.0.89, 21074)
+Preparing to connect with clients...
+Accepted connection from (182.200.0.89, 21064)
+Preparing to connect with clients...
+GET http://www.cs.cmu.edu/~213/img/rkh.jpg HTTP/1.1
+cacheit: 1 and content_len: 0
+2blk size: 1467
+3blk size: 1467
+3blk size: 90
+Accepted connection from (182.200.0.89, 21118)
+Preparing to connect with clients...
+GET http://www.cs.cmu.edu/~213/ HTTP/1.1
+cache length: 10896
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+  "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML>
+<HEAD>
+<TITLE>15-213 (18-213): Introduction to Computer Systems</TITLE>
+<!-- Based on a design by Frank Pfenning -->
+
+<META name="description" content="Introduction to Computer Systems">
+<META name="keywords" content="Introduction to Computer Systems">
+<LINK REL="stylesheet" HREF="course.css" TYPE="text/css">
+</HEAD>
+
+<BODY BGCOLOR="white" MARGINWIDTH=0 MARGINHEIGHT=0>
+<TABLE WIDTH="100%" BORDER=0 CELLSPACING=0 CELLPADDING=10>
+<TR>
+<TD CLASS="sidebar">&nbsp;</TD>
+<TD CLASS="main">&nbsp;</TD>
+<TD CLASS="main">&nbsp;</TD>
+</TR>
+<TR>
+<TD CLASS="sidebar" VALIGN="top">
+<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=2>
+  <TR><TD CLASS="menu"><B CLASS="here">Home</B></TD></TR>
+  <TR><TD CLASS="menu"><A HREF="schedule.html">Schedule</A></TD></TR>
+  <TR><TD CLASS="menu"><A HREF="assignments.html">Assignments</A></TD></TR>
+  <TR><TD CLASS="menu"><A HREF="exams.html">Exams</A></TD></TR>
+  <TR><TD CLASS="menu"><A HREF="labmachines.html">Lab Machines</A></TD></TR>
+  <TR><TD CLASS="menu"><A HREF="resources.html">Resources</A></TD></TR>
+  <TR><TD CLASS="menu"><A HREF="codeStyle.html">Style Guideline</A></TD></TR>
+  <TR><TD CLASS="menu"><A HREF="faq.html">FAQ</A></TD></TR>
+  <TR><TD>&nbsp;</TD></TR>
+  <TR><TD CLASS="menu"><A HREF="http://csapp.cs.cmu.edu/">Textbook</A></TD></TR>
+  <TR><TD CLASS="menu"><A HREF="http://autolab.cs.cmu.edu/">Autolab</A></TD></TR>
+  <TR><TD>&nbsp;</TD></TR>
+</TABLE>
+</TD>
+<TD CLASS="main">&nbsp;</TD>
+<TD CLASS="main" VALIGN="top">
+
+
+<!--
+<p>
+<h1><font color=red>Summer 2014 students: Click <a href="/afs/cs/academic/class/15213-m14/www/"><b>here</b></a> for the Summer 2014 page. </font></h1>
+-->
+
+
+<table width=700><tr><td>
+
+<H1>15-213/18-213/15-213: Introduction to Computer Systems (ICS)</H1>
+
+<TABLE BORDER=0>
+<TR><TD>Summer 2015</TD></TR>
+<TR><TD>
+ Lecture 1: TWR 12:00-13:20, DH A302,
+ <a href="http://www.cs.jhu.edu/~nwf/">Nathaniel "nwf" Filardo</a>
+</td></tr>
+
+<TR><TD> 12 units </TD></TR>
+</TABLE>
+
+<P>
+  The ICS course provides a programmer's view of how computer systems
+  execute programs, store information, and communicate. It enables
+  students to become more effective programmers, especially in dealing
+  with issues of performance, portability and robustness. It also
+  serves as a foundation for courses on compilers, networks, operating
+  systems, and computer architecture, where a deeper understanding of
+  systems-level issues is required. Topics covered include:
+  machine-level code and its generation by optimizing compilers,
+  performance evaluation and optimization, computer arithmetic, memory
+  organization and management, networking technology and protocols,
+  and supporting concurrent computation.
+</P>
+
+<p>
+<a href="syllabus/syllabus.pdf">Course Syllabus</a> (includes rules on cheating, late assignments, etc)
+
+<P>
+<STRONG>Prerequisites:</STRONG> 15-122 </P>
+
+<HR noshade>
+<H3>What's New?</H3>
+
+<li> <b>Tue, May 14:</b>
+  The slides for the C boot camp can be found <a href="recitations/c_boot_camp.pdf">here (pdf)</a> and <a href="recitations/c_boot_camp.pptx">here (pptx)</a>.
+  The code and C puzzles can be found <a href="recitations/c_boot_camp.tar">here</a></b>
+</li>
+
+<li> <b>Tue, May 14:</b> Office hours and classes begin on Tuesday, May 19th.
+</li>
+
+<li><b>Tue, May 14:</b> Please don't contact the instructors with
+waitlist questions. The following two people can help you with all of your wait list questions:
+<ul>
+<li> 15-213: Catherine Fichtner (cathyf@cs.cmu.edu)
+<li> 18-213: Chelsea Mastilak (cmastila@andrew.cmu.edu)
+</ul>
+</li>
+
+
+<!--
+<li> <b>Wed, Dec 19:</b> Final grades have been submitted.
+    <br><i>Final grade cutoffs:</i> A>=90, B>=80, C>=70, D>=54
+    <br><i>Mean courseAvg: </i> 80/100,
+    <i>Median:</i> 85/100, <i>Max:</i> 97.8/100
+
+<li> <b>Tue, Dec 11:</b> Final exam scores have been released on Autolab.
+
+<li> <b>Wed, Nov 28:</b> Malloc Lab style scores have been released on Autolab.
+
+<li> <b>Mon, Nov 26:</b> The 213 Final Exam is Monday, Dec. 10,
+8:30am-11:30am. See the <a href="exams.html">exams</a> page for details.
+
+<li> <b>Mon, Nov 12:</b> Shell Lab style scores have been released on Autolab.
+
+<li> <b> Mon, Oct 22:</b> The deadline for submitting your hardcopy
+midterm regrade requests to Prof O'Hallaron is 2pm, Wed, Oct 24. This
+is a hard deadline; late submissions will not be considered. See the
+course syllabus for a description of how to submit a regrade request.
+
+<li> <b>Mon, Oct 22:</b>Midterm exams are available from the ECE
+Course Hub in HH 1112, M-F, 9am-5pm.
+
+<li> <b>Mon, Oct 22:</b>Cache Lab style scores have been released.
+
+<li> <b>Tue, Oct 9:</b>Info about the midterm is available from the <a href="exams.html">Exams page</a>.
+-->
+
+</UL>
+
+<H3>Getting Help</H3>
+
+<TABLE BORDER=0 cellpadding="2">
+
+  <TR>
+    <TH ALIGN="right" WIDTH=100>Email</TH>
+    <TD>15-213-staff@cs.cmu.edu</TD>
+  </TR>
+
+  <TR>
+    <TH ALIGN="right" WIDTH=100>Instructor Office Hours</TH>
+    <TD>Tue, Wed, Thu: 15:30 (3:30pm) - 17:00 (5:00 pm); GHC 5202</TD>
+  </TR>
+
+ <TR>
+   <TH ALIGN="right"> TA Office Hours </TH>
+   <TD VALIGN="top"> Daily (including weekends!) 5:30pm - 8:00pm in GHC 5202. </TD></TR>
+
+</TABLE>
+
+<h3>Course Materials</h3>
+<TABLE BORDER=0 cellpadding="2">
+ <TR>
+   <TH ALIGN="right" WIDTH=100> <A HREF="schedule.html">Schedule</A> </TH>
+   <TD> Lecture schedule, slides, recitation notes, readings, and code </TD>
+ </TR>
+ <TR>
+   <TH ALIGN="right"> <A HREF="assignments.html">Assignments</A> </TH>
+   <TD> Details of assignments, due dates, and policies </TD>
+ </TR>
+ <TR>
+   <TH ALIGN="right"> <A HREF="exams.html">Exams</A> </TH>
+   <TD> Information about quizzes, exams, and final </TD>
+ </TR>
+ <TR>
+   <TH ALIGN="right"> <A HREF="labmachines.html">Lab Machines</A> </TH>
+   <TD> Instructions for using the lab machines </TD>
+ </TR>
+ <TR>
+   <TH ALIGN="right"> <A HREF="resources.html">Resources</A> </TH>
+   <TD> Additional course resources </TD>
+ </TR>
+</TABLE>
+
+<H3>Course Information</H3>
+
+<TABLE BORDER=0 cellpadding="2">
+ <TR>
+   <TH ALIGN="right" WIDTH=100>For details</TH>
+   <TD>See the <a href="syllabus/syllabus.pdf">course syllabus</a> for details (below is just a few overview bits).</TD>
+ </TR>
+ <TR>
+   <TH ALIGN="right" WIDTH=100>Lectures</TH>
+   <TD>TWR 12:00-1:20pm DH A302</TD>
+ </TR>
+ <TR>
+   <TH ALIGN="right"> Recitations </TH>
+   <TD VALIGN="top"> Friday 12:00-1:30pm, GHC 4211.</TD></TR>
+<TR>
+   <TH ALIGN="right"> Textbooks </TH>
+   <TD VALIGN="top">
+     Randal E. Bryant and David R. O'Hallaron, <BR>
+     <EM><A HREF="http://csapp.cs.cmu.edu/">Computer Systems: A
+     Programmer's Perspective, Second Edition</A></EM>, Prentice Hall,  2011 <BR>
+   </TD>
+ </TR>
+ <TR>
+   <TH ALIGN="right"> &nbsp; </TH>
+   <TD VALIGN="top">
+     Brian W. Kernighan and Dennis M. Ritchie, <BR>
+     <EM>The C Programming Language, Second Edition</em>, Prentice Hall, 1988
+   </TD>
+ </TR>
+ <TR>
+   <TH ALIGN="right"> Credit </TH>
+   <TD> 12 units </TD>
+ </TR>
+ <TR>
+   <TH ALIGN="right"> Grading </TH>
+   <TD>Composed from total lab performance (50%) and total exam performance (50%). <br>
+ </TR>
+ <TR>
+   <TH ALIGN="right"> Labs </TH>
+   <TD>There are 7 labs, not evenly weighted. See
+   the <a href="assignments.html">assignments page</a> for
+   the breakdown.</td>
+
+ <TR>
+   <TH ALIGN="right"> Exams </TH>
+   <TD>There is one midterm exam, online, proctored, closed book (20%).<BR>
+       There is a final exam, online, proctored, closed book (30%).</TD>
+   </TD>
+</tr>
+
+ <TR>
+   <TH ALIGN="right"> Home </TH>
+   <TD><A HREF="http://www.cs.cmu.edu/%7e213">http://www.cs.cmu.edu/~213</A></TD>
+ </TR>
+ <TR>
+   <TH ALIGN="right">Questions</TH>
+   <TD>Email to 15-213-staff@cs.cmu.edu. Visit office hours (see above)</TD>
+ </TR>
+<TR>
+   <TH ALIGN="right"> Blackboard </TH>
+   <TD>We are not using Blackboard for this course.</TD>
+</tr>
+<TR>
+   <TH ALIGN="right"> Piazza </TH>
+   <TD>We are not using Piazza for this course.</TD>
+</tr>
+ <TR>
+   <TH ALIGN="right">Course Directory</TH>
+   <TD>/afs/cs/academic/class/15213-m15/</TD>
+ </TR>
+</TABLE>
+
+<H3>Instructors</H3>
+<TABLE BORDER=0 cellpadding="2">
+<TR>
+  <TH ALIGN="right" WIDTH=100> Name </TH>
+  <td><a href="http://www.cs.jhu.edu/%7enwf">Nathaniel Filardo</a></td>
+</TR>
+<TR>
+  <TH ALIGN="right"> Contact </TH>
+  <td>nwf@andrew.cmu.edu</td>
+</TR>
+<TR>
+  <TH ALIGN="right"> Office </TH>
+  <td>TBA (For the moment, GHC 5202)</td>
+</TR>
+<TR>
+  <TH ALIGN="right"> Office Hours </TH>
+  <TD>TWR 15:30-17:00 (or by appt)</TD>
+ </TR>
+</table>
+
+<H3>Course Assistant</H3>
+<TABLE BORDER=0 cellpadding="2">
+
+There are many TAs for the course this summer, to whom we are forever grateful.
+
+<TR>
+  <TH WIDTH=200> Name </TH>
+  <TH> Email </TH>
+  <TH> Picture </TH>
+  <TH> TA Office Hour Days </TH>
+  <TH> Info </TH>
+</TR>
+<TR>
+  <TH>Thomas "TJ" O'Connor</TH>
+  <TD>tjo@andrew</TD>
+  <TD> <IMG src="img/tjo.jpg" width="100" /> </TD>
+  <TD>  </TD>
+  <TD>Senior CS major who enjoys lifting and camping</TD>
+</TR>
+<TR>
+  <TH>Shelton Dsouza</TH>
+  <TD>sdsouza@andrew</TD>
+  <TD> <IMG src="img/sdsouza.jpg" width="100" /> </TD>
+  <TD> Thursday, Saturday </TD>
+  <TD>ECE first year Masters student who enjoys reading novels and playing football.</TD>
+</TR>
+<TR>
+  <TH>Dhruven Shah</TH>
+  <TD>dhruvens@andrew</TD>
+  <TD> <IMG src="img/dhruvens.jpg" width="100" /> </TD>
+  <TD> Thursday, Saturday </TD>
+  <TD>ECE first year Masters student who enjoys sports, travelling, and music.</TD>
+</TR>
+<TR>
+  <TH>Monil Shah</TH>
+  <TD>monilsha@andrew</TD>
+  <TD> <IMG src="img/monilsha.jpg" width="100" /> </TD>
+  <TD> Wednesday, Friday </TD>
+  <TD>ECE Masters student (class of 2016) and fitness enthusiast who enjoys music, biking, and outdoor sports.</TD>
+</TR>
+<TR>
+  <TH><A HREF="http://tarunkaruturi.in">Tarun Karuturi-Venkata-Raghava</A></TH>
+  <TD> tkarutur@andrew </TD>
+  <TD> <IMG src="img/tkarutur.jpg" width="100" /> </TD>
+  <TD> Wednesday, Friday </TD>
+  <TD>ECE Masters student (class of 2016)</TD>
+</TR>
+<TR>
+  <TH> Dipayan Bhattacharya </TH>
+  <TD> dipayan@cmu </TD>
+  <TD> <IMG src="img/dipayan.jpg" width="100" /> </TD>
+  <TD> Monday, Tuesday </TD>
+  <TD>ECE Masters student (class of 2015) who enjoys computer gaming</TD>
+</TR>
+<TR>
+  <TH> Richard Ha </TH>
+  <TD> rkh@andrew </TD>
+  <TD> <IMG src="img/rkh.jpg" width="100" /> </TD>
+  <TD> Monday, Tuesday </TD>
+  <TD></TD>
+</TR>
+<TR>
+  <TH> Shen Chen Xu </TH>
+  <TD> shenchex@andrew </TD>
+  <TD> <IMG src="img/shenchex.jpg" width="100" /> </TD>
+  <TD> Sunday </TD>
+  <TD> PhD 3rd year </TD>
+</TR>
+<TR>
+  <TH> Vishvesh Mohanarangam Selvakumaar </TH>
+  <TD> vmohanar@alumni </TD>
+  <TD> <!--IMG src="img/vmohanar.jpg" width="100" /--> </TD>
+  <TD>  </TD>
+  <TD> Recent ECE graduate; 213 TA for the past 3 semesters </TD>
+</TR>
+
+<TR>
+
+</TR>
+
+</table>
+
+
+
+</TABLE>
+<hr noshade>
+<P CLASS="bottom"></P>
+</TD>
+</TR>
+</TABLE>
+</BODY>
+</HTML>
+
+
+Accepted connection from (182.200.0.89, 21124)
+Preparing to connect with clients...
+GET http://www.cs.cmu.edu/~213/course.css HTTP/1.1
+cache length: 1656
+/* Standard style sheet for courses -fp */
+/* Override default to more readable sans-serif font */
+/* Base color: blue, base font: sans-serif */
+body { color: black; font-size: 12px; font-family: Verdana, Arial, Helvetica, sans-serif; line-height: 18px; }
+h1 { font-size: 21px; font-weight: bold; line-height: 30px; margin: 0.67em 0; }
+h3 { font-size: 14px; font-weight: bold; margin: 1em 0; }
+table { padding: 0; }
+A:link { color: #af3526; }        /* new link, blue */
+A:visited { color: #af3526; }     /* visited link, violet */
+A:hover { color: #CC9900; }       /* hover, gold */
+A:active { color: #FF0000; }      /* active, red */
+UL { padding-top: 1ex; padding-bottom: 1ex; }
+LI.wide { padding-top: 0.5ex; padding-bottom: 0.5ex; }
+TH { vertical-align: top; }
+TD { vertical-align: top; }
+TD.sidebar { background: #e8e6d8; width: 150px; } /* sidebar, left */
+TD.main { background-repeat: repeat; background-attachment: scroll; background-position: 0 0; }   /* main body, right */
+TD.lecture { padding-left: 1em; }
+TD.planned { color: #9E9EE7; padding-left: 1em; }     /* planned lectures */
+TD.recitation { background: #e8e6d8; padding-right: 6px; } /* recitation lines */
+DT { padding: 1ex 0ex; }           /* definition term */
+/* DT:first-child { padding: 0ex 0ex; } */           /* first definition term */
+/* DT.first { padding: 0ex 0ex; } */                 /* first definition term */
+B.here { font-weight: bold; color: black; }  /* current node, black */
+PRE, TT, CODE { font-family: monospace; } /* font-size: large; */
+                                   /* fixed width fonts */
+.pad { padding-left: 12px; }
+TD.recbody { padding-right: 6px; }
+
+Accepted connection from (182.200.0.89, 21128)
+Preparing to connect with clients...
+Accepted connection from (182.200.0.89, 21127)
+Preparing to connect with clients...
+Accepted connection from (182.200.0.89, 21126)
+Preparing to connect with clients...
+Accepted connection from (182.200.0.89, 21122)
+Preparing to connect with clients...
+Accepted connection from (182.200.0.89, 21129)
+Preparing to connect with clients...
+Accepted connection from (182.200.0.89, 21123)
+Preparing to connect with clients...
+Accepted connection from (182.200.0.89, 21140)
+Preparing to connect with clients...
+Accepted connection from (182.200.0.89, 21117)
+Preparing to connect with clients...
+Accepted connection from (182.200.0.89, 21125)
+Preparing to connect with clients...
+Accepted connection from (182.200.0.89, 21160)
+Preparing to connect with clients...
+GET http://www.cs.cmu.edu/~213/img/sdsouza.jpg HTTP/1.1
+cache length: 90
+ÿØÿàE%$×£Ox©®¹œNïZÖ<7ËOw¯_7Iîìîƒšâ¤$É¼Œz.1Š¢¡£»]3ßšÑpÒ>Ğpq]°Š‰ÁVì¨ëi‰ÀÁ«$Å]sïUX
+Accepted connection from (182.200.0.89, 21162)
+Preparing to connect with clients...
+GET http://www.cs.cmu.edu/~213/img/dhruvens.jpg HTTP/1.1
+cache length: 2159
+ÿØÿà\¤´ôç(ò·e%İrºŞåé`ÆØÙ!vãµ™%#©æVxrğ™ŸdQ
+³¤tIRN¼mDU7š!VøÛwA.¯ú_ŒQEĞö¾ˆÊŞ„1¥«¦i4öûêü4H­ûÇÚZß6›D¿ñä±<•j-¬¯^Ší„Çì‡õ)-÷|g¦÷«åSòêŸöé.ê×/ŠöüÍùyìB»p`àtÎ™Ó:GHàÌ>Üw=¬fHO–G¡²Qœ8Ë7Eq*¬Uœd+8¬éà„HÁ3]f# ıò’‰ÖŒ‡æ¡~ºèJÇªK"‚2æCÚ§Ş+~3üøĞ‰\V+ùÇÛÿ)‡Â‡Ë_Ö‚áÆ§…z0aõø5Q=}´}^ ÿÄljwƒ,bŒ?"éyÂ{ªQˆM¬dĞ‰*GûÎa©å§,c±¥U%ö)Q_Ğ¨gş
+Az…èU$£üÄºƒÆpìjM‹[%ô3E§à¿)zÊy$C°¹¼½ËlCè_Ö*ô'@Høx-B®Â½’¬ï‡şŒ×p› ğ0³G†67ƒÅ)Bö!F^~ ˜ÂÁ	ŒQt3Rd·9Qı‰’zDéW(Æ±1#»lÙ
+N8=`×ñ êbI{.'ìèm^ş—KàlÛ&‰~„½„¶CawØõWÚÃWlìØÈsÈr„|=È€ö$³ô!šËÿZî†v6C´íì×4*odé‰
+À„¹ü,»uÈí‹¡°L}Oó¡$í·ömzK×¡Íœ1î^Ë„/³O%›Š5ÑP°°Lâ^)x¿$,1áá	x//4"²–É¾Ç­‰¯b9f·ìegÒ^(â~ÆÏèÔ-Ä¥³öKµ(ƒB÷Pô{i¹Ù«ÀW¾ëILB^~ü™mhoÕÜ…§£åJKšcäà'„\Aiß”øÖxÂç8`Kñ_
+|Oxy++àB¾ØºU<`Û~]ä‘.Ü‡õI+·g¥”ÆOHêšC~£é,ûXÅKğ	0¥À×ÄÆ7=ƒ9ŠBÖ¿hnQ¶ÿ˜hh„!1L$A!!_‚ÌÃGØÒZHI—¬¿LÓ'ğşÈ-¡Øî°¹¦ŒJ Òz!bĞBä„Á"RL.H˜‚S¾#¶zÑO%“‚l®6]*Uæ'¢[ƒü:—bo,¾„&‹¹Ïıá¾/¶tÄx±Õ0»l)ĞÃIˆ÷Âá!Ò1ĞcD—˜YdÄüp/İ¤;Ø ÙFx‰ÍaøÑiŒº†Á,A7Ã¤GÄ6t‚ãÖS.)J†ÑqŞ‹şğ#}!'ğnÅ÷…#é¼:»º<„¶tH—q?ÖBOQfbeá776.W‚åBÛel]Ãf1¶„­¤›dn;-š"!?	˜5xQ—‚Bk4\&hÛN¡ö?EÜÇfS"’Î¹Á¢˜eÅ(…‚â¸k„!
+HM®‡İÂ[ÑğD19®(\.Z!±ñB(ßì³E½è’ÂoÔ7ÌLBep_£§Å}6èJ_ŠacXi1vA	Ár\âÖ †Èò„IQ”á8L%ˆ<?0¶;E‚¤j{ õÃxbî‡^—Wo)„/Ù"ø!á+ˆ^Ï±`ƒFv×OÁr÷	UèÑnÄà¿"	hO‚hAa¡ì‹×$N|æû†‡!V„		f‚\„²¢		6à®ÄŞ¡ÎÄÓÂÃX[12ìK!¿Á¡,­°„!LXv¢ÂD&!BfpHH^BÂ™DÎ‰£ìmÇ>ÄG}u‘ğ–7îå®°„€Gƒ%ìE!¨ –ü?–‹eÙ0ÑSèi‰	Äë±„@‘>ˆˆk)ŒBš¢r‚ÑnS¸%Š%Ö„·1 H$†Æ„4ØÂ¥Q°úh[J3D4-xˆz‡ŸÖjLcè·‡ó’£÷
+ˆö%Xt,®4Y¼5I	EvğJCFÀWÓbt“¦©ÕDQB¶…2‚i²[ˆ]f•†š”"»/ĞĞÓXx2‹¢e(ÙI`*c(‡cûŠç¸úÊÙC¦ş:ì´ŒeÑèFßÒ‰<cV¢;Ù	ŸBa~‰ˆBÌÃBCd2ŸD£¤¤şçõÔ_Rf´Sï+m™Dö,¼Ø•Ø½…ö‘+2÷>˜äàií¡R;FGˆÈ§­'z=‡ÈúˆBE†ˆhô¢ğD‰0«!ào†^Eæ»àœ#!ÑqF-Æğ¯ÜWè®ğO¢ˆ6äbôrf±‰Œşh6wúÎ‚â¹©>‹ØJ „à‰ï!2¡\PµˆKÂŠ0˜A0!Ú,¡7¢oƒb(x[ÁìeGù…¡aŠ0aª>¾Ø“!	„ğˆhŠäS¤'‰Ğ¨H' OÂHBÔÉ±“b†J½)-©¢.Í´/x!1¢š¹_D“®çŠèHHu”/ÉšĞdİtŠ	bˆhP4?$n~ŸE÷DˆïFmñœ¡ÂodTHƒYK‹xXxBD 	Å"Êô/èÓŸÃ~!ÂMóX¼a	F4ceQJQ¼LhxBãk‚²Œª‡èáÑc
+.Æ«ˆI ‘ÑÿÄ¿jd²D¿vNxûø±‡~|uøá“³Í‡Õ›àÏÜ[yƒ°CğÇÂ&®ÿÅ¼úÀø;©e®¶}êŞ@:C0Wƒ=m–cêN½OˆxZ¥«‡Ó(ğä§7ÿ
+Accepted connection from (182.200.0.89, 21164)
+Preparing to connect with clients...
+GET http://www.cs.cmu.edu/~213/img/dipayan.jpg HTTP/1.1
+cache length: 631
+ÿØÿàR÷`/IÓ­E²w]¹å‹C¥ôêvtœí#ÌsL»•ò;Pß÷Ú€GâŠûk‡ ÿ½ÿÖgïÚÜÕ¨ÀC4ˆÁ+]+ øò¼ïVëvİ.ÍÕj¼5­ïì=×Îâ¾£{Õ¼æ;EôÓ=–o‘ÒÛëîÍî!gé¯sìh=ÿæ^†¸i1?¢Ø/ãÕ’¼Û*°/‰÷V›Êfİs½:Î+¼*´Ÿñ	l«©9²¨Ÿ©^aµŸ wL7D7QİJ"ˆPª…9(FS¥‚¦g¨ 7KMÊ ¢(œ()	³!N]!Bu4­Aİ…ÊhR™(Â‰$#	£(Bvpíºüïñ¦³ñÍZ¬ioE•5IäÊığŸ¼(ïô?>Ò˜}ı´–İt*6K›«#
+ƒéTJéÌN˜ĞI¥,tƒ1V—àÏõ€Bé#©ĞK§ÚÈƒÏbš4’JvÃŞ$‰ì•?A…À´ì	ˆî¾§Ğ|aÒ¬mº.jQ§\k¥gHMWƒÉìø#á
+=_¬TêıJŸı•ÓGš÷8aÎs¼s×ëu¯]Ş\0C¶UZÈ"az*´é‰İsîídÃ#ëÕì×—ø]sö9LÑ¤óôSø™?U¶••g<hÔg¸[)ôZ¯òÍOD™Ûìµ:qŸÅòWÿîÁ9éÆ®AUÓ’DÄíku9œï“ºŠÓ :rG#ì.sµiR5Îª.%Ğc|ªš/%.|iŠÆÍU·8µ£`v@‘Uä¼À÷UVšö6	¦Jz‡Ì« –Iö
+¦º˜
+Accepted connection from (182.200.0.89, 21167)
+Preparing to connect with clients...
+GET http://www.cs.cmu.edu/~213/img/tkarutur.jpg HTTP/1.1
+cache length: 5747
+‰PNG
+
+ñ“Ì¿ÑOáôaà]¯§øtLÁxŠN%ˆ”¦7q›¶•KƒªBnJ©î9äDEµ2É/œ§Néúë
+Vs,c)o5‰?Å'x„2´‚Z¶ğÛ jD|íßEë€jÄîûµê_ÿÍO‰7ê´Ê8…¾W§)Z“üÊÁd|åëº¾ß®ÃôåtV¢3ºC¶Ïy‰Â6“ÚCO„3œm=ÕÍÊüòSc*ıä®àb¼íD’&6¾”lÖè¯ôè<iÀ†3—ùtí{o8åÑR¢À;EÒ$h†› kãjzÃÔWd?;¸uÒ"ÆÜ“ÏOˆ8¡ş¤‹--¡<Ò¹§\ĞzÒ‰ï#ŸÌñu!â ¨ºŞÍÈ‰—ÕÃO¬Ó‚Œs¨ê¡­jıAG{	„y(ƒ°ü¤„U‘ÎÄ*Oe´U/!³,ë›:3÷ƒÚĞògHkG£9í¡
+Ó~Š.1y_ÆDş~«kzX¿v\	8ğIü&.õœ<í­4WÉôëŞ†½äo¾ôø2¨Å'.,tÒ@:n8Q
+çªÏœ Tã0¬T•³W‹ÏxGıX.™o%¼õGÂ—Xå¦³Gj/Lƒj¶çP—‹‹Cø—ùSŞ?_ÒS=Î¯•£é™)5²øÏvEûÇü8dğ)¼;D|İÍ‡`´Ü´=Ñ÷Ò¸=Ğèk§l´P¢§z¨mPeÿıı¯Ğõ.G5znÃ–ŞKÿM/”3e£]v@Lâ,WgÚÆÃ<:at:ÎtÒ~¥ ˆ¨Cïœ:“,Õï!‰‰u1S[¦…M‹V§çU=,†ÔC
+)l÷RG™_ã¥bP¿î? _ü3ò4mL:½ŸfmÜÚÏ:¸î_zˆ£‡::<0ĞUøªG¿“®Ğ æM+øq„s¡«ô®½‰Æ¡±‡%ÓMPB`xÏmCWcÿ©¶Â23ÿ:=Ä­Âû¹ˆT8OøõLô›ÒÅ’úyJ£ÂàéßÂõg¾/qeäJ¦Ûà¹B¥P®k\
+6rİ,×Ë<*]ñí™Ï«x[4kØú†{…W ëı¡1f»ä#$ãmx^Â³UËvBzeEÒ%uî}g/7¦,êáë›Şıc¾òçåìr­wÓQº:T÷K´ÒU~±FU•›î‰šç#uŞ·“¦×°tRˆ×¶õb¢üÕ…G“¼FLÊ©ÑFÁkŞ$#?yÉù|Šá{åXAè«õK¶úÔêÕš}p?·	Ø9ûåŸ®gÖê„®ŸKVyï= õäÙƒÂÀfvë†ş¬@ÓR3ôt5yÎ^ ;6Íİs^¤éç´´œÌB¥é%ÑÊxn¦ˆ^²éıÅ†–9=_|äG#3[…C1Â«†Abo^ÛóRÉİÊ÷n©-…%éØ`Ï P0•^µ’—}3epJ€)ÃO%h„6»Ôí\sZ¤àÁ~FTsvËêŞõ=ûÔ,”úÁf”Í%ç&RöJ®ÿøn]¬Ã9°?æ¦ez?u§ÏÆuXü¤fÓlÏz-.š†%S0gÎÍ§C çĞ`05áË7ÎrT!"ìÒ|ÎOË#i‹À"¿¥,â¾äUE_9u˜*M±³¼~êP•0²ş •Îá=[×=Æ•L+}å1#ÒõT•\¹QÑòJéa®9ØÖ÷à–ìÆ0^2ziL‡ëòúùk|eààFı©Í!èËn„uÄ¯óŠgãšŞú0b–mÃ•-i4N¾Í'ã>ò8}”uğrFŠ"ó„J/GÒïÙEÇ·la¶.q©Ó¦æ÷Ô¦FÓa¾=×Òï¢Å´hša{™7]Ğ¨R›=k¨©ñj](©)!ê—ß3Şd­×Ü…
+i¹³èQ»úÃ *äiGØÏxó!ZA+¨B`£0ÇR’vı_!edç®M>¶|G¦¡›×+OsléùN?>™şåO_N_}õ#
+•3 G®72*edzzÁGòRşÄz¨“üs´ê•FMx•rXxEn¸\Y6ğnô¦Ñm6†>âê®amÆø‰£M¹‹>d=âÏŒØÆ·å«ıaÏ†÷W_ò ÈÉ“é€
+·o=DÙÀºw{úŒ»İcÉzc;ÖN…£›<ÃäW7J¹:kiwÑ“-àCŞ\†ıs/=ÒŞe€À‹°kI?ğ§ñµ=&[ä=ã¿
+#•gÊÉÃYÕ¡³¥eæúX²}‘Í\å¿Æp%O×ÃjøH—0ú¶mÎ.×ÅØº1’®i U·Ğa#ÒE†4L[!ìÜÇˆs¹âXÀ„Ásä€æ¾’âçõºªRÍÁj*Ïtlcg±N¥ê‘e¦üêèÑïäJ³Ã-åPSåq×tMF Ê„|®<Œ°œŞ²ëéÃÂ¹«ø`×Ba®BÃK,ˆXâãÈ3+MıÒ£"l…`˜SÅê@˜Eè¾†·¦Ëƒ’0}›yÀS€.¬‹FñšÖ¼)QèE	Æ™ùVíÂ[îc®x:cz†ât£é‡û/P¬Ï˜úÃÎï»¯§ñ8eTÊ84J”F«ì*[~åNœY*ŞÏ|'»M¶İõi¾¿eXÊŒ ÿÂ2úVEdÅ)£Ú#v€ùZÇi¼÷ï6°|Éú¯SıûŒLí¼`ä„+©—|¯èòô £Q•·[32*·µîE®}ëréÉtxuƒYÔ90×¹oHÆiºj¤Wq˜.4­È§ác^ÖğÑ3Âq?—Û¼Çü›ŞÎUJVì0ú¯>¬–_N]ó„Ù¾o±M=n0ûxÌ,ãëŸP·—Ó§Ÿ}œ¥œ;®ç»NÙ·¦¢Ok!yı\y.cÛ¯ÿMDÿMêjÉ[Ú¸*œÆEwÚ{¶Ğ6ÿKØk´SáhVâs“6dÌ{•ÎŸË¿šGÊµÄ²~®¬Ş	¯ñH£:oùù—­]®*¯Ü0xÆÙÒû<÷ııÓOŸMÏıü3#×¢'ö“^EéÇæğ¦Oƒ/†:%Ñó¦ë¿íNºêïğÑ¶|çˆºİÚívz;ú;ıºú3NXãzÉ á´û×8ŞÇñùvşıÍ3¹êìüÒNÇ–ÚsÆ¹`ª›/ùˆ‹¼2ıîóŸ¦?şôpúèsvÿ‰óË6gûI»ËaÉwãZ\~IŞ÷oB¡ÄË°ş&î0Ø·q{û·¦çÌÏhø´Œˆwı;Ë/Á\õ¶ªŸ”‡‚Ïeiİ, ª1ôEe%¼i–V'[†,\æÑé–JT¹P©®Ú±.¼à8`Fáf¥ªí¿àŸùµÉyÍš¸¹Ğ)›-Å#ƒFãZuĞbä!-_Fb¯Ô²åB‚°|cÃœªËN÷'ôk¿¯©™KmLºÉx‚r±ã™¸@q}øá½é6;Î;|zÚÍİ¦ûÆÑºoäùı!§*ŒÜ\ù-2>¹rÂÍ+/Ğø2™ºíì‚+âØ‘+ìÅL‚t¾Ç+?ì$”:YÚ~—(ä¼ÿå›u Gí&ØÍ€
+’À(Ê«öˆJ‘V}7œ9	ï’OòKå˜ŠÚ¼øgÑ™ÒèŠÇ™¸íŸ¥mñ[*ÖÀ±T05²)÷jœñ­ğ:Î°Ñ½ªp_g–iJõ¹¹ŒØI 9rù paYà¬A]´¯‰HP+ŸÕøVË5!d«¦m«äf“ğ”OÛZJ‹Âƒ9PH@^!œn¶1	ì¨<Öå´íœ¥Gæ 2Â”v:æ-+ø£Î	]’ÂšØ!wûŸ±ñ’cV*ÖŒŠÕÒ©Í8#‰â¬_ít_øI¢Å·Ä`›Â.~iä´Yæ¯
+\M[
+ŒOl5ŸJkñ¯˜¦û$>i¯Î çQÕ“ê€*|ô°¶Yİ;iœIg¤­Ííw—]m×z¼©k—´õ£½·/Îô]Nª½ò…¢_úİ˜p·8ê98€ïîwq‹ş-ÃswäF(˜M–¸ÎÁ],Ï„–.ß¢¿ÖƒÊ»´¤ÜÌ/á½+Áƒî‚˜‘–OÊäc¡)XAšZ˜¡tHãİô7+1ôß»‚ÑÜœE… ßN+\—,øÒÑ>:Ù|v4|òœÊƒÓá’yém>ò·ƒÄ¿¥§„TJ2£r/’´ó¨£êzÙºÖfk£=˜·©šÆQöí£õ²5zıÚÃwÊT¥OêKlÖÿ8%ÖáÚoÇ§ŞîºĞËÖ¶Îõ£İËÚÂmÕïûÒ¶]ïê=‡jxWüÿô§¯‡ú§æù¯Ãïÿûáò	«Û¦q&š›ÛwøìS=1c¥”IëêD0ke©àc#òİíF6Æ˜ÃªóÃÚ[İÉ£îSš÷Øø¦æŞÅ =VşÀæŠi€ƒ$Õ€ãá°síõĞH´¸;ôw›•yˆ¼”Z@U
+ŞB¢ÍMTdx5g£ 
+-µá~àBmÓo@İ%pKB>YL.yurë°ZKÒL°ıø·3¿FÇ%Ïõ
+nI2¬ş¸N”0›÷z{«2“÷Å¯ğ¡Z7`dº9Wg9ÀUÊÏÇMòn1Ê]š˜gÛÜ7JãßÆ¯‹$ôdH;ÚÄ©4¨5Ù¢˜¢¬2ÎXÖç‡8¶‰sÛ;‰4ÑA1³Çùÿ#îÄÕí´Ûªôõcıo³şíaôÃ¥•èø«Ÿ©r×Ø`<–ñ˜İ}ÜİÍãÙø-öxíB—‚’ho9”rÅ•2±†Û™ÎÓ¸ÓVĞ¨Ù*gi™Úë2ªöÒe?ZFëüúÒùIZ#ıš} İ*èßRIüªêH´÷»5ªi"SĞ)©dY§„Àü·©ç
+š¢èóÜn®j¼g¦„ŞóüD‡€×WÌY}Ÿ ¤	Ù4z§şELÕNıšª€m¼b¨Ÿh¤YHHÇ|ún¡%––*„©™«kª{×ûMGt«[” <ŒÅXó•.8]±joøò«gÃÓç÷Y|RY'^®dõdt;•Óæ	WèÃæ	’eÛ6‹HÓ®}7ß¦Æ0ü”q¨çøäÏ‚é6c}‹LB%¤é‘I'+f°#£g—]Ûq~a/×ê‡x4cËBî8Éô² Úó¶t¯œîş»Îï:²ÓpÓçëÂşønUn¢+?­	ªS`5s„·™›dt[œÓ¯w)˜yo“2²œÒÛõ}Ûx‡iØv7†Ïz?rûDJÆÔ~ò#PBx%·æµuÆõ?v5\4Â¤WVwj ÑàŸ=}o{Ã7ù3iÓIĞ¬‘/–¥¬ €µi*+ê‰„OcÇ…óT½Í¡¦õ¦Û³¸…P 1¥Â~š«‘á@ğ`j‡‘ú³1]¶°¤û`Eû¢)Ã|ŞëbëØ²ÚŞQÍ«‘Ø~·Ù¼b®\æ©†ÌõßjÄqÈ?@@Fk«ÇH‰dds¢Û¶¢;ı|bY4,
++Ûä?˜+ «*2ÖhÁa79+.üQA0DWöš6ã1¬ØQ{ß¸¹5AŸi–cÄo;ºù`½¥[”GaN’©(Üjw›ác­ì[ğ¤ö¼„|<-ÁJV°9vŠ#.ò­•ÓW»‘>«ğ§GNĞÍ°1ÓÇ!åBE'ŒÚâƒ§¹§ÇJ¸-õf~şù§x;k÷õÛ8ÜğìÙ³°ôf}RŒğ.J`à#¸Ïª&qd¨'vñNŠíZI¡F…=·“ü;Rèqã	,Î¢H/içK!{Ããüˆ5úÒgïH-StèEÅ£èUùad:'¢G·éPÉ]PùeD¸Å„'Å$CFÚñ?Òªı®.“ŞR£½,˜Eåûº†ï«‚Y“A°ŞÓ;÷uÁÊ’æ_iÜ7Vu	îR]Òë¯ìÉ>ÕùÿmÇ:ÕñÓÑ©ö®J8Ó(ÅÃ‚š‡ÃZÑšç8kP~Í?™¹mÀÎĞ­GÒbRÙU©.è
+B’Â!8…<TNˆ”Y…÷„Yw)ø`æbß¡ºùñVr¸d–¢‚ÙÅL†Õvœ»vÜ,h0×ª¶ö"&>¬ú\AS/_d˜vô4g>A!yàálëß¦àfæ*oálR>²°ôâç_š¿şõ/Íßşö·è‘Îë
+6p»'‹N:â#D<7H~#hQµğrò†2Á™VƒyÃˆğÆÇğ¡ÊÅ/,N‘nÂ3Å@Ïõ•ëŸÕüË¿şSóÇïş©yúôiÜËÊ<-§Å€E%ÿZ=gü!¬ó¨ÒÍ¯Ú/âCxÓÉP…pš	C}§İáöØ)!DÙOy]£¾vs7}]ûYš/cAÚÑ˜‹§¤•æC¥-w¥‹Wè¨©7ºŞ/% ‡Ú¶y¤ô³Ï“Õ\¾«ò°¨Õ.`YÔã;Úpÿp?´XÑûZÏLëF•fıDBWû[‘³s*S§²sËt<ß£˜8‚»,ü‹‚9•O	duuD—Ò«ädƒŸ´¢#Lë^}$êü˜¿Ğñ[QäßYê¬”è‰:cÈ(äÓMÜ;ÊğÈ™–[@²ĞG¼„e¨f,xPÜØNFÃ£jsT.¸’]ÅB‹ôßªyáT]¦ÀÕx0_‡ã¿¨N|ä£?Ç!DÙ‘@ÕğVZÉÿ,j9°|[›Ñ™:Bpiàá0ãîrè¹JâÆÍş µfÂ Ì'ë.søOxåš…(æN}a4îñîUvÂ@U¼W~LO,È)-*²Q¦…èÏaGØ2×ªˆ%©%\ L¼Ü—uÅ;t-ê~`ìÌK*GY•@UÊ"M¨û#ŒaÑÏR„9¦K¿ñ9ÜüÜrs°?ls'û69îøøé£pçnÎæTy‚”=£QG–3—v²ãƒFVÅh^ğèÆ¿¾2×¼z¥ç_ü£Ù~ó£îøÔœ½FçCí"é®Ô¥¹<§ğ‘Ü\Ôñ•’'ÃpyFÆŸıĞš7]Yµ€ãÃÜÂÂÍ)e’EœPäñH/…¾k^¼ü©ù—ı£vª¬èm¦èÜ‘:Ôó#Kkğ¾å3<MeÏ2ÍÊ#¥[£¸Å¯È‚f_T[à‹R¸sGFœ‚Š=¥ªkZ ;•ûr^P=ÔØ0Ö#uÊ‚Ï5Ëó«ÍáŞ/ÍÏ?üÜl¾~ÕÜÕñ¡†ı*·2BEI^hì&0¯ñ™(2rÈ4 ™o(~Ò~zzÜ:õ˜<2éñšÉ	Ú\¶Ñke¿Úí¢fßg<®fBmPMôœhºsª00æon€ €é.$N5~|˜¨µ¶SéBà6|L¨;‚Ÿ¨Y—y]ÿ®ı,Â»°Ÿì7Ãò“
+ä^±D^¥EJøéO1B#øÚ¬!¬æåYŒ¢ÇÅ"=0@³×’ky©-â+°æöy	Ê÷óÀÁòxQ•rYfl"@-	K:ˆƒa4nYÆ-t«ÈŠÑåÖ:ÎY6[Ø´·‚¢K·!“èHZÂ@-´%¯NŞAc½p‡ÿ,Êô
+Accepted connection from (182.200.0.89, 21171)
+Preparing to connect with clients...
+GET http://www.cs.cmu.edu/~213/img/rkh.jpg HTTP/1.1
+cache length: 1467
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>404 - Document not found</title>
+</head>
+<body>
+<h1>Document not found</h1>
+
+<p>The requested address (URL) was not found on this server.</p><p>You may have used an outdated link or may have typed the address incorrectly.</p>
+<hr>
+<a href="http://www.cs.cmu.edu">SCS Home</a>
+
+<!-- IE: document must be at least 512 bytes --> 
+<!--
+<p>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
+reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
+pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
+culpa qui officia deserunt mollit anim id est laborum.
+</p>
+<p>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
+reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
+pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
+culpa qui officia deserunt mollit anim id est laborum.
+</p>
+-->
+
+</body>
+</html>
+Accepted connection from (182.200.0.89, 21170)
+Preparing to connect with clients...
+GET http://www.cs.cmu.edu/~213/img/tjo.jpg HTTP/1.1
+cache length: 4
+ÿØÿà
+Accepted connection from (182.200.0.89, 21175)
+Preparing to connect with clients...
+GET http://www.cs.cmu.edu/~213/img/shenchex.jpg HTTP/1.1
+cache length: 4349
+ÿØÿáS_Exif	ùzVrŠ5ŒÙÛ©R‘íT ¸MZŞ=ktÇö¤àÓK~Âà{ÔØ¡øòÇ$1Lš`±ç§¥rzÍì‡;ŸaT’&NÆµÖ­oGZÊ}jO#ë¹’g$¶sõª{'+’Uò#Ôgk6¡o"ğÀæ²u.A”`}«3§sŸj“Ír>jlO3ekÈöäÕ¥€Ë{.Äû½êµŸ=ã«9
+qµÒ[C¬x@¥s»\Ó[Aâ†0ëòÃ¹ˆ\u=ê?RšÔ‚ŒqÜT*ıæ¿rã×Š®R½¼ùb‘åb#vÎ¥ì4ıiKÀâÖèõùı;~¶×zMÈá
+÷[³}R†vF‚+¢±Öc¹ˆZß"È‡¡#¥{4¦2¤M¿1:œŠÔDnãŠÂ“N–Ñ…Å›ù°“ÎOJ+‰S“å#ŸçŠíŒ®	ÇSbhÒh°y™kPö÷YÃ/¸Á«0_,$©ŞªN~d'–jÓÀ¬DŠ{!æ®ä$X›ËU-ï‚L®¤7ˆ±„—vqØUL;‚Â'Àä1â‚¬t"pG#*j¼¬öíæBçiäŠ£Òlá@õÈ'úÔ¿i""^"ãÑøÓ±&­¶ <¸çm6k+Ñ™!F÷ùkœKß³¹*nzmÿ îI4¬ã“ ¦NàA$ƒOŠ9¤Ò{Sc´€0ğuL´Íë_	àóíàT‘œ€	àúÕ±ñ.İ“…Úùäœšâã¶Øá|ö¨ÏZÓ±¸‚X£wR'Wä×Ş°šMFGke¨GªªZ]Í‘X3ş]ß¯é[Vv)vU®Ğ„ŒŒsÔWÆx”˜$BAmØ"¶ô¯Mnéö—%Bã®Z:!#¶¶Ó#¿36î81ÂÁ"¢¸¹Ôìâ›3,‘¼ôÛ5¿fËsmflÜ
+İ²Õî/³G0(X¦¹'3¢2LÖ¶×â0Ç&â’0ÁCü'Ó¯5pk*¨¸„(a‚Ç‘XÏáˆ5(âÖrŠHÚøš“e^•¡â9îC°NyÁ¬ AV=ÁÔYZÂ&ÆÑœœUµ…Ø±c’äÉ„¨Æ9'µ 
+d&xŒ„œô”%vG&¡,|ÆÙS’H4í7P¹{E#;µ46v,à4dõÁ-ĞÔ‘ÙÃU`pÇ“‚°‘¬cr)ç³i2-ğùç>µ$6¾tÂá% Ğ
+²¶p4E®[\(Ö¾SM[Óµ‹Ø‡‚5goº£¡ª–Ÿo¤ÇÆR	 g&¹§³XÊÇUáıbŞ+o2ëÀr$Ö¥Éîİå±Œd®áŠóÛ-lGpcl|§ÁÈÅlÛø’ı¡1Ø²€WŒóÅsNÑ“:í&ægX­§P`U+’	!©×ñFN!B\œ»•¢kW‘Û)¼»›œ¡\}qZˆåÙ%·HÜ•õçùV…Íc-L;¤X® ÇzÖ†‘®Ån@7”#qsŒU­nÆÎù#0²¡UÊ´g“ŸZçõ-5£(²Ü…lªOQXNªI³¦OÇ{;%®(Îå~¦ºßxëRXÍµõ¼nÚ3ï^c`ÿP§ç¥{t¡e±Ë'vEb[€ÁÃ^\w55åçÙãıìXfã çÖ’Ñ¢‰[ª$Qİ\Çu›$@ÌëÁÇjêQò3®Ü¡€°òÉãŒš†h¬âÕn•Â6'CR<‘yrÄc ¦BàõªQÙ4¬$ÜÊAÈPx46ÑkbK˜¡0ûJ¶3¢…Ş9EºH¬ã©Ïİ¦²Šı¢pÉ– qPÍp¦f_+‡?3w©»:Å=Ápùeà6j[ "¸Ttàõvƒæòvåæ®Z 0×1‚Ê8>”›±vB\‡j±ç*ÌxúUw”l|9¦2´‘6ìfà‘Ò¨Ån2X†éëRådZEiİ|·EŒOËÍU!–,0û½H5røä²Ş­yâc´¾dpiÍÜÆdYT*1ùÕ©0²)ÛFª‹ŒŒòzŠt¶QŒ±ƒ‘ò9Å:[„«(p ÌyúU›XY#V‘·ü¹nV¶Œ‰å)Í©P©óc°pEdßh’©ø@27GãŞ¶ïmÌ;İv€Í–byZx¢6êÂROcíTä+3çJhc.í¹“ø”qQı‰¶æŒä
+ÙhÁİ”0•jdijöîÌ©
+ùJ.©jÛ¹‹M1÷öööÒ	š\ŞnAÁ"M¡Aà*Æ¨ˆT†ˆ1$ğETÁP$ÚvœÆJæ‘ZšzdhTÂèxo”“RÉm*¢‚ÔgÚj-¼7–Êg#?u¶vÒu~Y°
+œcŠÁ«Ø°©#Ân€_Ú¾¢ÿ•*v¡<Ô4Z¹Dgo~¦¢X1fJ²ØC<Ú|ı‰~%x²e‚GóeÑŞŞ7q«Éà1<1ô>Æ»ïÙş	Mñá”añŸ‹<mk,É4Ö–ZZÜM#‚ìŒg=^ÿtÔb¸•ØuMªÙİÓPY~Ú_²³|šf—ûBZ\İ:³ÅmšîX¤|Õø•{ğöRÒ5Ö’ßâö°·M´êŒeg;FàÉëëµô?üÏCÿÓãwÂù¤;|RB/PÖøaïÖ§‡ãÂÛ˜Ë§Œ"!>ñT-ü«ã˜õÈ/]œó1ÉÅVÅ5¶ùÄÌi`q\şİ\ÙA#íO0¡( ê*¢H¹
+€ç­[³‰g%¢VY2
