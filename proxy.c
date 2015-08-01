@@ -207,26 +207,20 @@ void doit(int fd)
 	blk->size = content_len;
 	strncpy(blk->uri, uri, MAXLINE);
 	blk->file = (char*) malloc(sizeof(char) * content_len);
-	memset(blk->file, 0, content_len);
 
 	// read response contents and write to client
 	while (content_len > MAXLINE) {
 		size = Rio_readnb(&rio_client, buf, MAXLINE);
 		Rio_writen(fd, buf, MAXLINE);
 		if (cacheit)
-			strcat(blk->file, buf);
+			strncat(blk->file, buf, size);
 		content_len -= MAXLINE;
 	}
 	// content is not null
 	while ((size = Rio_readnb(&rio_client, buf, MAXLINE)) > 0) {
 		Rio_writen(fd, buf, MAXLINE);
-		if (cacheit && content_len) {
-			printf("content_len: %d\n", content_len);
-			printf("buf_len: %d\n", strlen(buf));
-			printf("size: %d\n", size);
-			printf("file_size: %d\n", strlen(blk->file));
-			strcat(blk->file, buf);
-		}
+		if (cacheit && content_len)
+			strncat(blk->file, buf, size);
 	}
 	// add cache block
 	if (cacheit) {
