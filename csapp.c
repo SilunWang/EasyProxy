@@ -56,7 +56,7 @@ void app_error(char *msg) /* Application error */
 void dns_error(char *msg) /* Obsolete gethostbyname error */
 {
     fprintf(stderr, "%s\n", msg);
-    pthread_exit(NULL); 
+    //pthread_exit(NULL); 
     //exit(0);
 }
 

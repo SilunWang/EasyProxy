@@ -148,7 +148,7 @@ void evict_cache(struct cache_block* head, int size) {
             // ensure no thread is reading from ptr
             while (ptr->reading_cnt != 0)
                 sleep(0);
-            //free_cache_node(ptr);
+            free_cache_node(ptr);
             ptr = pre->next;
         }
         else {
@@ -157,7 +157,7 @@ void evict_cache(struct cache_block* head, int size) {
             // ensure no thread is reading from ptr
             while (ptr->reading_cnt != 0)
                 sleep(0);
-            //free_cache_node(ptr);
+            free_cache_node(ptr);
         }
     }
     V(&list_lock);

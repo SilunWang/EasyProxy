@@ -1,7 +1,8 @@
 /**
+ * Proxy Lab
  * Author: Silun Wang
  * Andrew ID: silunw
- * Date: 07-27-2015
+ * Date: 08-01-2015
  */
 #include "csapp.h"
 #include "cache.h"
@@ -13,26 +14,28 @@
 
 /* You won't lose style points for including these long lines in your code */
 static const char *user_agent_hdr = "User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:10.0.3) Gecko/20120305 Firefox/10.0.3\r\n";
-static const char *accept_hdr = "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\r\n";
-static const char *accept_encoding_hdr = "Accept-Encoding: gzip, deflate\r\n";
+//static const char *accept_hdr = "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\r\n";
+//static const char *accept_encoding_hdr = "Accept-Encoding: gzip, deflate\r\n";
 
 typedef struct {
-	int fd;	
+	/* file descriptor */
+	int fd;
 	struct sockaddr_storage socket_addr;
 } thread_args;
 
 /* total cache size */
 int cache_size = 0;
+
 /* the head of cache list */
 struct cache_block* head;
-/* the lock of cache list,
-   to add or delete a list node, 
-   you need to acquire this lock */
+
+/* the lock of the cache list.
+   To add or delete a list node, you need to acquire this lock first.
+*/
 sem_t list_lock;
 
 void doit(int fd);
 int parse_uri(char *uri, char *hostname, char* port, char *filename);
-void clienterror(int fd, char *cause, char *errnum, char *shortmsg, char *longmsg);
 void *thread (void *vargp);
 void sigsegv_handler(int sig);
 
@@ -84,7 +87,7 @@ int main(int argc, char **argv)
 		}
 	}
 
-} 
+}
 
 void *thread (void *vargp) {
 	thread_args args;
@@ -92,8 +95,10 @@ void *thread (void *vargp) {
 	Pthread_detach(pthread_self());
 	// handle segment fault: it is sometimes weird
 	Signal(SIGSEGV, sigsegv_handler);
+	printf("doit %d\n", args.fd);
 	doit(args.fd);
 	Close(args.fd);
+	printf("close %d\n", args.fd);
 	Free(vargp);
 	return NULL;
 }
@@ -102,7 +107,7 @@ void *thread (void *vargp) {
  * segment fault signal handler
  */
 void sigsegv_handler(int sig) {
-	sio_error("segment fault\n");
+	sio_error("Caught segment fault\n");
 	pthread_exit(NULL);
 	return;
 }
@@ -110,94 +115,93 @@ void sigsegv_handler(int sig) {
 /*
  * doit - handle one HTTP request/response transaction
  */
-void doit(int fd)
+void doit(int to_client_fd)
 {
 	char buf[MAXLINE], method[MAXLINE], uri[MAXLINE], version[MAXLINE];
 	char filename[MAXLINE], hostname[MAXLINE];
 	char port[10];
-	rio_t rio;
-	rio_t rio_client;
-	int clientfd;
+	rio_t rio_to_client;
+	rio_t rio_to_server;
+	int to_server_fd;
 
 	/* Read request line and headers */
-	Rio_readinitb(&rio, fd);
-	if (!Rio_readlineb(&rio, buf, MAXLINE))
-		return;
+	Rio_readinitb(&rio_to_client, to_client_fd);
+	Rio_readlineb(&rio_to_client, buf, MAXLINE);
 	printf("%s", buf);
-	sscanf(buf, "%s %s %s", method, uri, version);    
+	sscanf(buf, "%s %s %s", method, uri, version);
 
-	// if not GET method, ignore it
-	if (strcasecmp(method, "GET")) {                     
-		clienterror(fd, method, "501", "Not Implemented",
-		            "Tiny does not implement this method");
+	/* if not GET method, ignore it */
+	if (strcasecmp(method, "GET")) {
 		return;
-	}                                                    
+	}
 
 	/* Parse URI from GET request */
 	parse_uri(uri, hostname, port, filename);
-
 	sprintf(buf, "%s %s %s\r\n", "GET", filename, "HTTP/1.0");
 
-	struct cache_block* ptr;
-	ptr = search_cache(head, uri);
-	// cache found
+	/* search content in cache list */
+	struct cache_block* ptr = search_cache(head, uri);
+
+	/* cache found, directly send to client */
 	if (ptr) {
-		// add the number of existing threads reading ptr
+		// add the number of existing threads reading
 		add_reading_cnt(ptr);
 		// send cache to client
-		Rio_writen(fd, ptr->file, ptr->size);
-		// subtract the number of existing threads reading ptr
+		Rio_writen(to_client_fd, ptr->file, ptr->size);
+		// subtract the number of existing threads reading
 		sub_reading_cnt(ptr);
+		// update timestamp and reorder LRU list
 		update_timestamp(head, ptr);
+
 		return;
 	}
 
-	// cache not found, connect with server
-	clientfd = Open_clientfd(hostname, port);
-	Rio_readinitb(&rio_client, clientfd);
+	/* cache not found, connect with server */
+	to_server_fd = Open_clientfd(hostname, port);
+	printf("%s: %d\n", uri, to_server_fd);
+	Rio_readinitb(&rio_to_server, to_server_fd);
 	// send request line: GET HTTP/1.0
-	Rio_writen(clientfd, buf, strlen(buf));
+	Rio_writen(to_server_fd, buf, strlen(buf));
 	// send host
 	sprintf(buf, "Host: %s\r\n", hostname);
-	Rio_writen(clientfd, buf, strlen(buf));
-	Rio_readlineb(&rio, buf, MAXLINE);
+	Rio_writen(to_server_fd, buf, strlen(buf));
 
-	// read http headers from client and write to server
+	Rio_readlineb(&rio_to_client, buf, MAXLINE);
+
+	/* read http headers from client and write to server */
 	while (strncmp(buf, "\r\n", MAXLINE) != 0) {
-		if (strstr(buf, "User-Agent")) 
+		if (strstr(buf, "User-Agent"))
 			strncpy(buf, user_agent_hdr, MAXLINE);
-		else if (strstr(buf, "Accept")) 
-			strncpy(buf, accept_hdr, MAXLINE);
-		else if (strstr(buf, "Accept-Encoding")) 
-			strncpy(buf, accept_encoding_hdr, MAXLINE);
-		else if (strstr(buf, "Connection")) 
+		else if (strstr(buf, "Connection"))
 			strncpy(buf, "Connection: close\r\n", MAXLINE);
-		else if (strstr(buf, "Proxy-Connection")) 
+		else if (strstr(buf, "Proxy-Connection"))
 			strncpy(buf, "Proxy-Connection: close\r\n", MAXLINE);
 		else if (strstr(buf, "Host")) {
 			// ignore, because we already sent one
-			Rio_readlineb(&rio, buf, MAXLINE);
+			Rio_readlineb(&rio_to_client, buf, MAXLINE);
 			continue;
 		}
-		Rio_writen(clientfd, buf, strlen(buf));
-		Rio_readlineb(&rio, buf, MAXLINE);
+		Rio_writen(to_server_fd, buf, strlen(buf));
+		Rio_readlineb(&rio_to_client, buf, MAXLINE);
 	}
-	// terminates headers
-	Rio_writen(clientfd, "\r\n", 2);
+	/* terminates request headers */
+	Rio_writen(to_server_fd, "\r\n", 2);
 
-	// read http response from server and write to client
-	Rio_readlineb(&rio_client, buf, MAXLINE);
+	/* read http response from server and write to client */
+	Rio_readlineb(&rio_to_server, buf, MAXLINE);
 	int content_len = 0;
 	while (strncmp(buf, "\r\n", MAXLINE) != 0) {
 		char* ptr = strstr(buf, "Content-length");
 		if (ptr) {
 			content_len = atoi(ptr + 16);
 		}
-		Rio_writen(fd, buf, strlen(buf));
-		Rio_readlineb(&rio_client, buf, MAXLINE);
+		printf("write2: %s\n", uri);
+		printf("fd: %d\n", to_client_fd);
+		Rio_writen(to_client_fd, buf, strlen(buf));
+		Rio_readlineb(&rio_to_server, buf, MAXLINE);
 	}
-	// terminates headers
-	Rio_writen(fd, "\r\n", 2);
+	/* terminates response headers */
+	Rio_writen(to_client_fd, "\r\n", 2);
 
 	int size = 0;
 	int cacheit = 0;
@@ -213,34 +217,41 @@ void doit(int fd)
 	if (content_len > 0)
 		blk->file = (char*) malloc(sizeof(char) * content_len);
 	else
-		blk->file = (char*) malloc(1000000);
+		blk->file = (char*) malloc(sizeof(char) * MAX_OBJECT_SIZE);
 
 	memset(buf, 0, MAXLINE);
 	int total_size = 0;
-	char* tmp = blk->file;
+	char* headptr = blk->file;
+
 	// read response contents and write to client
-	while ((size = Rio_readnb(&rio_client, buf, MAXLINE)) > 0) {
+	while ((size = Rio_readnb(&rio_to_server, buf, MAXLINE)) > 0) {
 		total_size += size;
-		printf("total_size %s: %d\n", uri, total_size);
+		if (total_size > MAX_OBJECT_SIZE)
+			cacheit = 0;
 		if (cacheit) {
-			memcpy(tmp, buf, size);
-			tmp += size;
+			memcpy(headptr, buf, size);
+			headptr += size;
 		}
-		Rio_writen(fd, buf, size);
+		printf("write3: %s\n", uri);
+		Rio_writen(to_client_fd, buf, size);
 		memset(buf, 0, MAXLINE);
 	}
 
 	// add cache block
 	if (cacheit) {
 		blk->size = total_size;
-		printf("blk size %s: %d\n", uri, blk->size);
+		blk->file = (char*) realloc(blk->file, blk->size);
 		// size overflow, need to evict using LRU
 		if (blk->size + cache_size > MAX_CACHE_SIZE)
 			evict_cache(head, blk->size);
 		add_cache(head, blk);
 	}
-	
-	Close(clientfd);
+	// prevent memory leakage
+	else {
+		free_cache_node(blk);
+	}
+
+	Close(to_server_fd);
 	return;
 }
 /* $end doit */
@@ -264,8 +275,8 @@ int parse_uri(char *uri, char *hostname, char* port, char* filename)
 	host_end = strstr(host_start, "/");
 	size_t hostname_len = strlen(host_start) - strlen(host_end);
 	strncpy(hostname, host_start, hostname_len);
-	char* p;
-	p = strtok(hostname, ":");
+
+	char* p = strtok(hostname, ":");
 	// get port number
 	p = strtok(NULL, ":");
 	if (p)
@@ -276,31 +287,3 @@ int parse_uri(char *uri, char *hostname, char* port, char* filename)
 	strcpy(filename, file_start);
 	return 0;
 }
-
-
-/*
- * clienterror - returns an error message to the client
- */
-/* $begin clienterror */
-void clienterror(int fd, char *cause, char *errnum,
-                 char *shortmsg, char *longmsg)
-{
-	char buf[MAXLINE], body[MAXBUF];
-
-	/* Build the HTTP response body */
-	sprintf(body, "<html><title>Tiny Error</title>");
-	sprintf(body, "%s<body bgcolor=""ffffff"">\r\n", body);
-	sprintf(body, "%s%s: %s\r\n", body, errnum, shortmsg);
-	sprintf(body, "%s<p>%s: %s\r\n", body, longmsg, cause);
-	sprintf(body, "%s<hr><em>The Tiny Web server</em>\r\n", body);
-
-	/* Print the HTTP response */
-	sprintf(buf, "HTTP/1.0 %s %s\r\n", errnum, shortmsg);
-	Rio_writen(fd, buf, strlen(buf));
-	sprintf(buf, "Content-type: text/html\r\n");
-	Rio_writen(fd, buf, strlen(buf));
-	sprintf(buf, "Content-length: %d\r\n\r\n", (int)strlen(body));
-	Rio_writen(fd, buf, strlen(buf));
-	Rio_writen(fd, body, strlen(body));
-}
-/* $end clienterror */
