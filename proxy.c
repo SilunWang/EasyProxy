@@ -34,7 +34,7 @@ struct cache_block* head;
 */
 sem_t list_lock;
 
-void doit(int fd);
+void serve(int fd);
 int parse_uri(char *uri, char *hostname, char* port, char *filename);
 void *thread (void *vargp);
 void sigsegv_handler(int sig);
@@ -71,12 +71,11 @@ int main(int argc, char **argv)
 		socklen_t clientlen = sizeof(struct sockaddr_storage);
 		printf("Preparing to connect with clients...\n");
 
-		args_ptr->fd = accept(listenfd, (SA *)&args_ptr->socket_addr, &clientlen);
-		if (args_ptr->fd < 0) {
-			printf("accept failure\n");
-			continue;
-		}
-		if (getnameinfo((SA *) &args_ptr->socket_addr, clientlen, hostname, MAXLINE, port, MAXLINE, 0) != 0) {
+		args_ptr->fd = Accept(listenfd, 
+			(SA *)&args_ptr->socket_addr, &clientlen);
+		
+		if (getnameinfo((SA *) &args_ptr->socket_addr, 
+			clientlen, hostname, MAXLINE, port, MAXLINE, 0) != 0) {
 			printf("getnameinfo failure\n");
 			continue;
 		}
@@ -95,10 +94,10 @@ void *thread (void *vargp) {
 	Pthread_detach(pthread_self());
 	// handle segment fault: it is sometimes weird
 	Signal(SIGSEGV, sigsegv_handler);
-	printf("doit %d\n", args.fd);
-	doit(args.fd);
+	// Valar Dohaeris
+	serve(args.fd);
+	// Valar Morghulis
 	Close(args.fd);
-	printf("close %d\n", args.fd);
 	Free(vargp);
 	return NULL;
 }
@@ -113,9 +112,9 @@ void sigsegv_handler(int sig) {
 }
 
 /*
- * doit - handle one HTTP request/response transaction
+ * serve - handle one HTTP request/response transaction
  */
-void doit(int to_client_fd)
+void serve(int to_client_fd)
 {
 	char buf[MAXLINE], method[MAXLINE], uri[MAXLINE], version[MAXLINE];
 	char filename[MAXLINE], hostname[MAXLINE];
@@ -127,7 +126,6 @@ void doit(int to_client_fd)
 	/* Read request line and headers */
 	Rio_readinitb(&rio_to_client, to_client_fd);
 	Rio_readlineb(&rio_to_client, buf, MAXLINE);
-	printf("%s", buf);
 	sscanf(buf, "%s %s %s", method, uri, version);
 
 	/* if not GET method, ignore it */
@@ -137,6 +135,11 @@ void doit(int to_client_fd)
 
 	/* Parse URI from GET request */
 	parse_uri(uri, hostname, port, filename);
+	// strange display error in csapp page
+	if (strcasecmp(hostname, "csapp.cs.cmu.edu") == 0) {
+		return;
+	}
+
 	sprintf(buf, "%s %s %s\r\n", "GET", filename, "HTTP/1.0");
 
 	/* search content in cache list */
@@ -158,17 +161,16 @@ void doit(int to_client_fd)
 
 	/* cache not found, connect with server */
 	to_server_fd = Open_clientfd(hostname, port);
-	printf("%s: %d\n", uri, to_server_fd);
 	Rio_readinitb(&rio_to_server, to_server_fd);
 	// send request line: GET HTTP/1.0
 	Rio_writen(to_server_fd, buf, strlen(buf));
-	// send host
+	// send host to server
 	sprintf(buf, "Host: %s\r\n", hostname);
 	Rio_writen(to_server_fd, buf, strlen(buf));
 
-	Rio_readlineb(&rio_to_client, buf, MAXLINE);
-
+	
 	/* read http headers from client and write to server */
+	Rio_readlineb(&rio_to_client, buf, MAXLINE);
 	while (strncmp(buf, "\r\n", MAXLINE) != 0) {
 		if (strstr(buf, "User-Agent"))
 			strncpy(buf, user_agent_hdr, MAXLINE);
@@ -187,30 +189,36 @@ void doit(int to_client_fd)
 	/* terminates request headers */
 	Rio_writen(to_server_fd, "\r\n", 2);
 
+
 	/* read http response from server and write to client */
+	memset(buf, 0, MAXLINE);
 	Rio_readlineb(&rio_to_server, buf, MAXLINE);
 	int content_len = 0;
+	
 	while (strncmp(buf, "\r\n", MAXLINE) != 0) {
 		char* ptr = strstr(buf, "Content-length");
 		if (ptr) {
 			content_len = atoi(ptr + 16);
 		}
-		printf("write2: %s\n", uri);
-		printf("fd: %d\n", to_client_fd);
+		//printf("write2: %s\n", uri);
+		//printf("fd: %d\n", to_client_fd);
+		//printf("%d: %s\n", strlen(buf), buf);
 		Rio_writen(to_client_fd, buf, strlen(buf));
+		memset(buf, 0, MAXLINE);
 		Rio_readlineb(&rio_to_server, buf, MAXLINE);
 	}
 	/* terminates response headers */
 	Rio_writen(to_client_fd, "\r\n", 2);
 
 	int size = 0;
-	int cacheit = 0;
-	// shall we cache it?
+	int need_cache = 0;
+	/* shall we cache it? */
 	if (content_len < MAX_OBJECT_SIZE)
-		cacheit = 1;
+		need_cache = 1;
 
-	// init a new cache block
-	struct cache_block* blk = (struct cache_block*) malloc(sizeof(struct cache_block));
+	/* init a new cache block */
+	struct cache_block* blk = (struct cache_block*) 
+								malloc(sizeof(struct cache_block));
 	init_cache(blk);
 	strncpy(blk->uri, uri, MAXLINE);
 
@@ -223,30 +231,32 @@ void doit(int to_client_fd)
 	int total_size = 0;
 	char* headptr = blk->file;
 
-	// read response contents and write to client
+	/* read response contents and write to client */
 	while ((size = Rio_readnb(&rio_to_server, buf, MAXLINE)) > 0) {
 		total_size += size;
 		if (total_size > MAX_OBJECT_SIZE)
-			cacheit = 0;
-		if (cacheit) {
+			need_cache = 0;
+		if (need_cache) {
 			memcpy(headptr, buf, size);
 			headptr += size;
 		}
-		printf("write3: %s\n", uri);
+		//printf("write3: %s\n", uri);
 		Rio_writen(to_client_fd, buf, size);
 		memset(buf, 0, MAXLINE);
 	}
 
-	// add cache block
-	if (cacheit) {
+	/* add cache block */
+	if (need_cache) {
 		blk->size = total_size;
+		// resize block
 		blk->file = (char*) realloc(blk->file, blk->size);
 		// size overflow, need to evict using LRU
 		if (blk->size + cache_size > MAX_CACHE_SIZE)
 			evict_cache(head, blk->size);
+		// add it
 		add_cache(head, blk);
 	}
-	// prevent memory leakage
+	/* prevent memory leakage */
 	else {
 		free_cache_node(blk);
 	}
@@ -254,7 +264,7 @@ void doit(int to_client_fd)
 	Close(to_server_fd);
 	return;
 }
-/* $end doit */
+/* $end serve */
 
 
 /*
@@ -270,7 +280,7 @@ int parse_uri(char *uri, char *hostname, char* port, char* filename)
 		hostname = NULL;
 		return -1;
 	}
-	// end of http://
+	// end of "http://""
 	host_start = uri + 7;
 	host_end = strstr(host_start, "/");
 	size_t hostname_len = strlen(host_start) - strlen(host_end);
